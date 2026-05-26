@@ -38,9 +38,8 @@ Objetivo: Mejorar cada día 💻
 
 <div align="center">
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=https://github.com/AmilcarGit&bg_color=0d1117&color=00F7FF&line=00F7FF&point=ffffff&area=true&hide_border=true"/>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=AmilcarGit&theme=tokyo-night"/>
 
-</div>
 
 # 🔥 Streak Stats
 
