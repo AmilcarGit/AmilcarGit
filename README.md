@@ -1,36 +1,24 @@
-<h1 align="center">Hola 👋, soy AmilcarGit</h1>
+<h1 align="center">⚡ AmílcarGit ⚡</h1>
 
-<p align="center">
-💻 Desarrollador en aprendizaje | 🚀 Creando proyectos poco a poco
-</p>
+<h3 align="center">🚀 Nuevo aquí • Aprendiendo • Construyendo 🚀</h3>
 
 ---
 
-## 🚀 Sobre mí
-- 🌱 Estoy aprendiendo programación
-- 💡 Me gusta crear ideas y proyectos nuevos
-- 🎯 Objetivo: convertirme en desarrollador profesional
-- 🔥 Interesado en tecnología y desarrollo web
+<div align="center">
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=700&lines=Bienvenido+a+mi+perfil+GitHub;Frontend+Developer;Backend+Developer;Aprendiendo+Tecnologías+Modernas;JavaScript+•+Node.js+•+React" />
+
+</div>
 
 ---
 
-## 🛠️ Tecnologías que uso
-- HTML
-- CSS
-- JavaScript (aprendiendo)
-- Git & GitHub
+# 🌌 Sobre mí
 
----
-
-## 📊 Mis estadísticas
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&show_icons=true&theme=tokyonight" />
-</p>
-
----
-
-## 🌐 Contacto
-- GitHub: https://github.com/AmilcarGit
+```yaml
+Nombre: AmílcarGit
+Estado: Nuevo aquí 🚀
+Enfoque: Full Stack Developer
+Objetivo: Mejorar cada día 💻
 
 <!--
 **AmilcarGit/AmilcarGit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
