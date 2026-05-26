@@ -43,9 +43,8 @@ Objetivo: Mejorar cada día 💻
 
 <div align="center">
 
-<img src="https://streak-stats.demolab.com?user=AmílcarGit&theme=tokyonight&hide_border=true&ring=00F7FF&fire=00F7FF&currStreakLabel=00F7FF"/>
+<img src="https://streak-stats.demolab.com?user=AmilcarGit&theme=tokyonight&hide_border=true"/>
 
-</div>
 
 <!--
 **AmilcarGit/AmilcarGit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
