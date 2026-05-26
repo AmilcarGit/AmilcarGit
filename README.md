@@ -6,7 +6,7 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=700&lines=Bienvenido+a+mi+perfil+GitHub; AmílcarGit+Oficial;Backend+Developer;Aprendiendo+Tecnologías+Modernas;JavaScript+•+Node.js+•+React" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=700&lines=Bienvenido+a+mi+perfil+GitHub;Frontend+Developer;Backend+Developer;Aprendiendo+Tecnologías+Modernas;JavaScript+•+Node.js+•+React" />
 
 </div>
 
