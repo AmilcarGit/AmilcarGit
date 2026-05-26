@@ -59,6 +59,10 @@ Objetivo: Mejorar cada día 💻
 
 ### ⚡ "Building • Learning • Improving" ⚡
 
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=00F7FF&height=120&section=footer"/>
+
 
 <!--
 **AmilcarGit/AmilcarGit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
