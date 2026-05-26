@@ -28,7 +28,7 @@ Objetivo: Mejorar cada día 💻
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=AmílcarGit&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00F7FF&icon_color=00F7FF"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&show_icons=true&theme=tokyonight&hide_border=true"/>
 
 <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmílcarGit&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=00F7FF"/>
 
