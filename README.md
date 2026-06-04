@@ -1,5 +1,7 @@
 <h1 align="center">⚡ AmílcarGit ⚡</h1>
 
+<p><img align="right" src="https://github.com/Adam-pw/Adam-pw/blob/main/animation_500_kxa883sd.gif" alt="adam-pw" /></p>
+
 <h3 align="center">🚀 Nuevo aquí • Aprendiendo • Construyendo 🚀</h3>
 
 <div align="center">
