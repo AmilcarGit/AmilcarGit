@@ -35,12 +35,11 @@
 
 # 🌌 Sobre mí
 
-```yaml
-Nombre: AmílcarGit 🦋
-Estado: Nuevo aquí 🚀
-Pais: Perú 🇵🇪 
-Objetivo: Mejorar cada día 💻
-
+```Nombre: AmílcarGit
+País: Perú 🇵🇪
+Rol: Creador de Bots para WhatsApp
+Experiencia: Automatización y desarrollo de soluciones conversacionales
+Meta: Transformar ideas en herramientas eficientes y escalables.
 ```
 # ⚡ Tech Stack
 
