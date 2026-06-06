@@ -17,7 +17,7 @@
   <https://files.catbox.moe/brm74v.mp4" />
 </p>
 
-  <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/pddbZTv0/1000519692.png' border='0' alt='1000519692'></a>
+  <https://files.catbox.moe/brm74v.mp4>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=F700FF&height=100&section=header&text=🌸%20ElyssiaBot-MD%20v1.0.0%20🌸&fontSize=32&fontColor=ffffff" />
