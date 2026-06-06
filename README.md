@@ -22,13 +22,14 @@
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=F700FF&height=100&section=header&text=🌸%20ElyssiaBot-MD%20v1.0.0%20🌸&fontSize=32&fontColor=ffffff" />
 </p>
+
 ---
 
 <h3 align="center">🚀 Nuevo aquí • Aprendiendo • Construyendo 🚀</h3>
 
 <div align="center">
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=700&lines=Bienvenido+a+mi+perfil+GitHub;Frontend+Developer;Backend+Developer;Aprendiendo+Tecnologías+Modernas;JavaScript+•+Node.js+•+React" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=700&lines=Bienvenido+a+mi+perfil🐱+GitHub;Frontend+Developer;Backend+Developer;Aprendiendo+Tecnologías+Modernas;JavaScript+•+Node.js+•+Y+•+mas" />
 
 </div>
 
