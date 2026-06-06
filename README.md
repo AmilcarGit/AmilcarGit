@@ -36,10 +36,11 @@
 # 🌌 Sobre mí
 
 ```yaml
-Nombre: AmílcarGit
+Nombre: AmílcarGit 🦋
 Estado: Nuevo aquí 🚀
-Enfoque: Full Stack Developer
+Pais: Perú 🇵🇪 
 Objetivo: Mejorar cada día 💻
+
 ```
 # ⚡ Tech Stack
 
