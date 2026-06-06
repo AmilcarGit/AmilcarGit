@@ -13,6 +13,10 @@
 ---
 # CREADOR DE <🦋ELYSSIABOT MD🌸
 
+<video width="320" height="240" controls>
+  <source src="https://files.catbox.moe/brm74v.mp4" type="video/mp4">
+  Tu navegador no soporta video.
+</video>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=F700FF&height=100&section=header&text=🌸%20ElyssiaBot-MD%20v1.0.0%20🌸&fontSize=32&fontColor=ffffff" />
