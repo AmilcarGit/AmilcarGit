@@ -11,13 +11,8 @@
 <!---line break---->
 
 ---
-# CREADOR DE <🦋ELYSSIABOT MD🌸>
+# CREADOR DE <🦋ELYSSIABOT MD🌸
 
-<p align="center">
-  <https://files.catbox.moe/brm74v.mp4" />
-</p>
-
-  <https://files.catbox.moe/brm74v.mp4>
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=F700FF&height=100&section=header&text=🌸%20ElyssiaBot-MD%20v1.0.0%20🌸&fontSize=32&fontColor=ffffff" />
