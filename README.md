@@ -13,6 +13,17 @@
 ---
 # CREADOR DE <🦋ELYSSIABOT MD🌸>
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=120&section=header&text=ELYSSIABOT-MD%20v1.0.0&fontSize=34&fontColor=ffffff" />
+</p>
+
+  <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/pddbZTv0/1000519692.png' border='0' alt='1000519692'></a>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=F700FF&height=100&section=header&text=🌸%20ElyssiaBot-MD%20v1.0.0%20🌸&fontSize=32&fontColor=ffffff" />
+</p>
+---
+
 <h3 align="center">🚀 Nuevo aquí • Aprendiendo • Construyendo 🚀</h3>
 
 <div align="center">
