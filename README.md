@@ -1,66 +1,41 @@
 
 
-<!---line break---->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
-<!---line break---->
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=BA52F6&height=120&section=header"/>
 
-<h1 align="center">⚡ AmílcarGit ⚡</h1>
+## hola 👋 Bienvenido, bienvenid@ a mi perfil 👑
 
-<!---line break---->
-<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif"> 
-<!---line break---->
+<p align="center"><img title="AmilcarGit" src="https://i.postimg.cc/B6Cb8DQ9/1000526055.png"></p>
 
----
-# CREADOR DE <🦋ELYSSIABOT MD🌸
 
-<p align="center">
-  <img src="assets/demo.gif" width="320">
-</p>
+<a href="https://www.youtube.com/@AmilcarGit" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"/>
+<a href="PRONTO"/>
+<img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/>
+<a href="PRONTO" target="_blank"> <img src="https://img.shields.io/badge/-TikTok-%23E4405F?style=for-the-badge&logo=tiktok&logoColor=black" target="_blank"></a> <img src="https://github.com/siegrin/siegrin/blob/main/Assets/Handshake.gif" height="30px">
 
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=F700FF&height=100&section=header&text=🌸%20ElyssiaBot-MD%20v1.0.0%20🌸&fontSize=32&fontColor=ffffff" />
-</p>
-
----
-
-<h3 align="center">🚀 Nuevo aquí • Aprendiendo • Construyendo 🚀</h3>
-
+<h2 align="center"> ESTADÍSTICAS </h2>
+</div>
 <div align="center">
-
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00F7FF&center=true&vCenter=true&width=700&lines=Bienvenido+a+mi+perfil🐱+GitHub;Frontend+Developer;Backend+Developer;Aprendiendo+Tecnologías+Modernas;JavaScript+•+Node.js+•+Y+•+mas" />
+<a href="https://github.com/AmilcarGit">
+<img src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40&locale=es" width="450"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=AmilcarGit&show_icons=true&locale=es&layout=compact&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40" width="290"  alt="AmilcarGit"/>
+<br><br>
+</a>
 
 </div>
+<h2 align="center"> MIS PROYECTOS </h2> 
 
-# 🌌 Sobre mí
+<a href="https://github.com/AmilcarGit/ElyssiaBot-MD">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=ElyssiaBot-MD&theme=merko" />
+</a>
 
-```Nombre: AmílcarGit
-País: Perú 🇵🇪
-Rol: Creador de Bots para WhatsApp
-Experiencia: Automatización y desarrollo de soluciones conversacionales
-Meta: Transformar ideas en herramientas eficientes y escalables.
-```
-</div>
-<h2 align="center"> MIS PROYECTOS </h2>
+<h2 align="center"> PROYECTOS DE COLABORACIÓN </h2>
 
-<a href="https://github.com/elrebelde21/LoliBot-MD">![github card](https://github-readme-stats.vercel.app/api/pin/?username=elrebelde21&repo=LoliBot-MD&theme=merko)</a>
-<a
+<a href="https://github.com/ElvigilanteDv/Hinata-Bot">
+  <img src="https://github-readme-stats.vercel.app/api/pin/?username=ElvigilanteDv&repo=Hinata-Bot&theme=omni" />
+</a>
 
 
-# ⚡ Tech Stack
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=js,ts,nodejs,react,nextjs,html,css,tailwind,mongodb,firebase,git,github,vscode&theme=dark" />
-
-</div>
-
-# 📊 GitHub Stats
-
-<div align="center">
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&show_icons=true&theme=tokyonight&hide_border=true"/>
-
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmilcarGit&layout=compact&theme=tokyonight&hide_border=true"/>
+<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=BA52F6&height=120&section=footer"/>
 
 # 🐍 Contributions
 
@@ -68,31 +43,3 @@ Meta: Transformar ideas en herramientas eficientes y escalables.
 <p align="center" >
   <img  src="https://raw.githubusercontent.com/Elanza-48/Elanza-48/main/resources/img/github-contribution-grid-snake.svg"
     alt="example" />
-
-
-# 🔥 Streak Stats
-
-<div align="center">
-
-<img src="https://streak-stats.demolab.com?user=AmilcarGit&theme=tokyonight&hide_border=true"/>
-
-# 🌐 Redes
-
-<div align="center">
-
-<a href="https://github.com/AmílcarGit">
-<img src="https://img.shields.io/badge/GitHub-00F7FF?style=for-the-badge&logo=github&logoColor=black"/>
-</a>
-
-# ✨ Frase
-
-<div align="center">
-
-### ⚡ "Building • Learning • Improving" ⚡
-
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=00F7FF&height=120&section=footer"/>
-
-<!--
-**AmilcarGit/AmilcarGit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
