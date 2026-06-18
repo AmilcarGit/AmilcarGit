@@ -40,13 +40,11 @@ Experiencia: Automatización y desarrollo de soluciones conversacionales
 Meta: Transformar ideas en herramientas eficientes y escalables.
 ```
 </div>
+<h2 align="center"> MIS PROYECTOS </h2>
 
-h2 align="center"> MIS PROYECTOS </h2>
+<a href="https://github.com/elrebelde21/LoliBot-MD">![github card](https://github-readme-stats.vercel.app/api/pin/?username=elrebelde21&repo=LoliBot-MD&theme=merko)</a>
+<a
 
-<a href="https://github.com/AmilcarGit/ElyssiaBot-MD">![github card](https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=ElyssiaBot-MD&theme=merk
-
-
-<a href="https://github.com/elrebelde21/The-LoliBot-MD-V2">![github card](https://github-readme-stats.vercel.app/api/pin/?username=elrebelde21&repo=The-LoliBot-MD-V2&theme=merk
 
 # ⚡ Tech Stack
 
