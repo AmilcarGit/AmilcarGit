@@ -40,6 +40,7 @@ Experiencia: Automatización y desarrollo de soluciones conversacionales
 Meta: Transformar ideas en herramientas eficientes y escalables.
 ```
 </div>
+
 h2 align="center"> MIS PROYECTOS </h2>
 
 <a href="https://github.com/AmilcarGit/ElyssiaBot-MD">![github card](https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=ElyssiaBot-MD&theme=merk
