@@ -39,6 +39,13 @@ Rol: Creador de Bots para WhatsApp
 Experiencia: Automatización y desarrollo de soluciones conversacionales
 Meta: Transformar ideas en herramientas eficientes y escalables.
 ```
+</div>
+h2 align="center"> MIS PROYECTOS🫧 </h2>
+
+<a href="https://github.com/AmilcarGit/ElyssiaBot-MD">![github card](https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=ElyssiaBot-MD&theme=merk
+
+
+
 # ⚡ Tech Stack
 
 <div align="center">
@@ -86,7 +93,6 @@ Meta: Transformar ideas en herramientas eficientes y escalables.
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=00F7FF&height=120&section=footer"/>
-
 
 <!--
 **AmilcarGit/AmilcarGit** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
