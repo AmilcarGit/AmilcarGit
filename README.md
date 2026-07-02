@@ -52,8 +52,5 @@
     alt="example" />
 
 
-<h2>ESTADÍSTICAS</h2>
-
-<img src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&show_icons=true&theme=merko" />
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmilcarGit&layout=compact&theme=merko" />
+<img src="https://img.shields.io/github/followers/AmilcarGit?label=Followers&style=social" />
+<img src="https://img.shields.io/github/stars/AmilcarGit?style=social" />
