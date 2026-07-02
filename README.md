@@ -31,7 +31,7 @@
 </a>
 
 <a href="https://github.com/AmilcarGit/TheEly-MD">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=TheEly-MD&theme=merko" />
+  <img src="https://gh-stats.vercel.app/api/pin/?username=AmilcarGit&repo=TheEly-MD&theme=merko" />
 </a>
 
 <h2 align="center"> PROYECTOS DE COLABORACIÓN </h2>
