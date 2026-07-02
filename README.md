@@ -21,6 +21,9 @@
 <br><br>
 </a>
 
+<img src="https://img.shields.io/github/followers/AmilcarGit?label=Followers&style=social" />
+<img src="https://img.shields.io/github/stars/AmilcarGit?style=social" />
+
 </div>
 <h2 align="center"> MIS PROYECTOS </h2> 
 
@@ -51,6 +54,3 @@
   <img  src="https://raw.githubusercontent.com/Elanza-48/Elanza-48/main/resources/img/github-contribution-grid-snake.svg"
     alt="example" />
 
-
-<img src="https://img.shields.io/github/followers/AmilcarGit?label=Followers&style=social" />
-<img src="https://img.shields.io/github/stars/AmilcarGit?style=social" />
