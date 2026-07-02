@@ -50,3 +50,10 @@
 <p align="center" >
   <img  src="https://raw.githubusercontent.com/Elanza-48/Elanza-48/main/resources/img/github-contribution-grid-snake.svg"
     alt="example" />
+
+
+<h2>ESTADÍSTICAS</h2>
+
+<img src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&show_icons=true&theme=merko" />
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmilcarGit&layout=compact&theme=merko" />
