@@ -67,7 +67,7 @@
 
 <div align="center">
 
-🦋 *"Más que un bot, una leyenda."* 🌹
+🦋 *"Aprendiendo Cada Día Mas 😊."* 🌹
 
 </div>
 
