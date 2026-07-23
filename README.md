@@ -33,7 +33,7 @@
 
 **🌹 TheYui-MD** — Bot de WhatsApp con temática waifu (🦋🌹), sin prefijo, con sistema de economía propia (Yui 💵), subbots, moderación automática (antilink, antiflood, antispam), sistema de registro y decenas de comandos personalizados.
 
-**⚔️ TheKael-MD** — La base sobre la que empecé a construir bots de WhatsApp: carga dinámica de plugins, sistema de administración de grupos y comandos esenciales.
+**⚔️ BaseBot** — La base sobre la que puedes empezar a onstruir bots de WhatsApp: carga dinámica de plugins, sistema de administración de grupos y comandos esenciales.
 
 ---
 
