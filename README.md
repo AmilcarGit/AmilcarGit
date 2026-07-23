@@ -1,8 +1,9 @@
 <div align="center">
 
-# ¡Hola! Soy AmilcarGit 👋🦋
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=D9469C&center=true&vCenter=true&width=500&lines=Hola%2C+soy+AmilcarGit+%F0%9F%A6%8B;Desarrollador+de+bots+de+WhatsApp;Aprendiendo+cada+d%C3%ADa+m%C3%A1s+%F0%9F%8C%B9" alt="Typing SVG" />
 
-### 🤖 Desarrollador de bots de WhatsApp · 📚 Aprendiendo a programar cada día
+![Profile Views](https://komarev.com/ghpvc/?username=AmilcarGit&color=d9469c&style=flat)
+![Followers](https://img.shields.io/github/followers/AmilcarGit?label=Followers&style=flat&color=d9469c)
 
 </div>
 
@@ -25,15 +26,15 @@
 <a href="https://github.com/AmilcarGit/TheYui-MD">
   <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=TheYui-MD&theme=radical" />
 </a>
-<a href="https://github.com/AmilcarGit/TheKael-MD">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=TheKael-MD&theme=radical" />
+<a href="https://github.com/AmilcarGit/BaseBot">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=BaseBot&theme=radical" />
 </a>
 
 </div>
 
 **🌹 TheYui-MD** — Bot de WhatsApp con temática waifu (🦋🌹), sin prefijo, con sistema de economía propia (Yui 💵), subbots, moderación automática (antilink, antiflood, antispam), sistema de registro y decenas de comandos personalizados.
 
-**⚔️ BaseBot** — La base sobre la que puedes empezar a onstruir bots de WhatsApp: carga dinámica de plugins, sistema de administración de grupos y comandos esenciales.
+**⚔️ BaseBot** — La base sobre la que puedes empezar a construir bots de WhatsApp: carga dinámica de plugins, sistema de administración de grupos y comandos esenciales.
 
 ---
 
@@ -65,17 +66,16 @@
 
 ---
 
+### 🐍 Actividad reciente
+
 <div align="center">
-
-🦋 *"Aprendiendo Cada Día Mas 😊."* 🌹
-
+<img src="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/github-contribution-grid-snake.svg" alt="Snake animation" />
 </div>
 
+---
 
-# 🐍 Contributions
+<div align="center">
 
-<!---------contribute chart animate snake----------------->
-<p align="center" >
-  <img  src="https://raw.githubusercontent.com/Elanza-48/Elanza-48/main/resources/img/github-contribution-grid-snake.svg"
-    alt="example" />
+🦋 *"Aprendiendo cada día más."* 🌹
 
+</div>
