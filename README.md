@@ -1,51 +1,76 @@
-
-
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=BA52F6&height=120&section=header"/>
-
-## hola 👋 Bienvenido, bienvenid@ a mi perfil 👑
-
-<p align="center"><img title="AmilcarGit" src="https://i.postimg.cc/B6Cb8DQ9/1000526055.png"></p>
-
-
-<a href="https://www.youtube.com/@AmilcarGit" target="_blank"><img src="https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white" target="_blank"/>
-<a href="PRONTO"/>
-<img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/>
-<a href="PRONTO" target="_blank"> <img src="https://img.shields.io/badge/-TikTok-%23E4405F?style=for-the-badge&logo=tiktok&logoColor=black" target="_blank"></a> <img src="https://github.com/siegrin/siegrin/blob/main/Assets/Handshake.gif" height="30px">
-
-<h2 align="center"> ESTADÍSTICAS </h2>
-</div>
 <div align="center">
-<a href="https://github.com/AmilcarGit">
-<img src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40&locale=es" width="450"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs?username=AmilcarGit&show_icons=true&locale=es&layout=compact&line_height=20&title_color=C372F2&icon_color=EE6FF4&text_color=D3D3D3&bg_color=0,000000,130F40" width="290"  alt="AmilcarGit"/>
-<br><br>
-</a>
 
-<img src="https://img.shields.io/github/followers/AmilcarGit?label=Followers&style=social" />
-<img src="https://img.shields.io/github/stars/AmilcarGit?style=social" />
+# ¡Hola! Soy AmilcarGit 👋🦋
+
+### 🤖 Desarrollador de bots de WhatsApp · 📚 Aprendiendo a programar cada día
 
 </div>
-<h2 align="center"> MIS PROYECTOS </h2> 
 
-<a href='https://postimg.cc/3yM3V8Z1' target='_blank'><img src='https://i.postimg.cc/3yM3V8Z1/1000536215.png' border='0' alt='1000536215'></a>
+---
 
+### 👑 Sobre mí
 
-<a href="https://github.com/AmilcarGit/ElyssiaBot-MD">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=ElyssiaBot-MD&theme=merko" />
+- 🦋 Creo **bots de WhatsApp** usando Node.js y Baileys
+- 🌱 Actualmente aprendiendo más sobre desarrollo backend y automatización
+- 🛠️ Desarrollo y pruebo mis proyectos desde **Termux (Android)**
+- 💬 Pregúntame sobre bots de WhatsApp, JavaScript o Node.js
+- ⚡ Fun fact: mis bots tienen nombre y personalidad propia (¡no son solo scripts!)
+
+---
+
+### 🚀 Proyectos destacados
+
+<div align="center">
+
+<a href="https://github.com/AmilcarGit/TheYui-MD">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=TheYui-MD&theme=radical" />
+</a>
+<a href="https://github.com/AmilcarGit/TheKael-MD">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=AmilcarGit&repo=TheKael-MD&theme=radical" />
 </a>
 
-<a href="https://github.com/AmilcarGit/TheEly-MD">
-  <img src="https://img.shields.io/badge/TheEly--MD-GitHub-black?logo=github" />
-</a>
+</div>
 
-<h2 align="center"> PROYECTOS DE COLABORACIÓN </h2>
+**🌹 TheYui-MD** — Bot de WhatsApp con temática waifu (🦋🌹), sin prefijo, con sistema de economía propia (Yui 💵), subbots, moderación automática (antilink, antiflood, antispam), sistema de registro y decenas de comandos personalizados.
 
-<a href="https://github.com/ElvigilanteDv/Hinata-Bot">
-  <img src="https://github-readme-stats.vercel.app/api/pin/?username=ElvigilanteDv&repo=Hinata-Bot&theme=omni" />
-</a>
+**⚔️ TheKael-MD** — La base sobre la que empecé a construir bots de WhatsApp: carga dinámica de plugins, sistema de administración de grupos y comandos esenciales.
 
+---
 
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=BA52F6&height=120&section=footer"/>
+### 🛠️ Tecnologías
+
+<div align="center">
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+![Termux](https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=gnu-bash&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![WhatsApp](https://img.shields.io/badge/WhatsApp_Bots-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
+
+</div>
+
+---
+
+### 📊 Estadísticas de GitHub
+
+<div align="center">
+
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&show_icons=true&theme=radical&hide_border=true" />
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmilcarGit&layout=compact&theme=radical&hide_border=true" />
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=AmilcarGit&theme=radical&hide_border=true" />
+
+</div>
+
+---
+
+<div align="center">
+
+🦋 *"Más que un bot, una leyenda."* 🌹
+
+</div>
+
 
 # 🐍 Contributions
 
