@@ -1,4 +1,7 @@
 <div align="center">
+
+<a href='https://postimg.cc/ykKzCcrg' target='_blank'><img src='https://i.postimg.cc/m2zZMSYw/file-000000007e3481f582fd4e0467fe5966.png' border='0' alt='file-000000007e3481f582fd4e0467fe5966'></a>
+
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&color=D9469C&center=true&vCenter=true&width=500&lines=Hola%2C+soy+AmilcarGit+%F0%9F%A6%8B;Desarrollador+de+bots+de+WhatsApp;Creando+experiencias+automatizadas+con+JS+%F0%9F%8C%B9" alt="Typing SVG" />
   
   ![Profile Views](https://komarev.com/ghpvc/?username=AmilcarGit&color=d9469c&style=flat)
