@@ -5,19 +5,16 @@
 ### 💻 Developer • 🤖 Bot Creator • 🌐 API Builder
 
 <p>
-<img src="https://img.shields.io/badge/Node.js-Developer-339933?style=for-the-badge&logo=node.js&logoColor=white">
-<img src="https://img.shields.io/badge/JavaScript-Developer-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-<img src="https://img.shields.io/badge/WhatsApp-Bots-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
-<img src="https://img.shields.io/badge/APIs-Builder-6C63FF?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Node.js-Developer-339933?style=for-the-badge&logo=node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/JavaScript-Developer-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/WhatsApp-Bots-25D366?style=for-the-badge&logo=whatsapp&logoColor=white">
+  <img src="https://img.shields.io/badge/APIs-Builder-7C3AED?style=for-the-badge">
 </p>
 
 <p>
-<a href="https://github.com/AmilcarGit">
-<img src="https://komarev.com/ghpvc/?username=AmilcarGit&label=VISITAS&color=0e75b6&style=for-the-badge" alt="Visitas">
-</a>
-<a href="https://github.com/AmilcarGit?tab=followers">
-<img src="https://img.shields.io/github/followers/AmilcarGit?style=for-the-badge&label=Followers" alt="Followers">
-</a>
+  <img src="https://komarev.com/ghpvc/?username=AmilcarGit&label=VISITAS&color=7C3AED&style=for-the-badge" alt="Contador de visitas">
+  <img src="https://img.shields.io/github/followers/AmilcarGit?style=for-the-badge&label=Followers" alt="Followers">
+  <img src="https://img.shields.io/github/stars/AmilcarGit?style=for-the-badge&label=Profile%20Stars" alt="Stars">
 </p>
 
 </div>
@@ -32,15 +29,15 @@ APIs, automatización, herramientas y proyectos para comunidades digitales.
 Me gusta experimentar, aprender y convertir ideas en proyectos funcionales. 🚀
 
 ```text
-🌱 Idea
-  ↓
-⚙️ Desarrollo
-  ↓
-🧪 Pruebas
-  ↓
-✨ Mejoras
-  ↓
-🚀 Lanzamiento
+🌱 IDEA
+   ↓
+⚙️ DESARROLLO
+   ↓
+🧪 PRUEBAS
+   ↓
+✨ MEJORAS
+   ↓
+🚀 LANZAMIENTO
 ```
 
 ---
@@ -68,32 +65,32 @@ Bot de WhatsApp Multi-Device, modular y personalizable.
 - 🔘 Botones interactivos
 - 🌐 Integración con APIs
 
+<p>
 <a href="https://github.com/AmilcarGit/FamilyBot-MD">
-<img src="https://img.shields.io/badge/🌿%20FamilyBot--MD-Ver%20proyecto-181717?style=for-the-badge&logo=github" alt="FamilyBot-MD">
+<img src="https://img.shields.io/badge/🌿%20FamilyBot--MD-VER%20PROYECTO-181717?style=for-the-badge&logo=github" alt="FamilyBot-MD">
 </a>
-
----
+<a href="https://github.com/AmilcarGit/FamilyBot-MD/releases">
+<img src="https://img.shields.io/badge/📦-RELEASES-7C3AED?style=for-the-badge&logo=github" alt="Releases">
+</a>
+</p>
 
 ### 🤖 TheYui-MD
 
 Proyecto anterior de bot de WhatsApp que dio origen a la nueva identidad de **FamilyBot-MD**.
 
 <a href="https://github.com/AmilcarGit/TheYui-MD">
-<img src="https://img.shields.io/badge/📦%20Ver%20repositorio-TheYui--MD-181717?style=for-the-badge&logo=github" alt="TheYui-MD">
+<img src="https://img.shields.io/badge/📦%20VER%20REPOSITORIO-TheYui--MD-181717?style=for-the-badge&logo=github" alt="TheYui-MD">
 </a>
-
----
 
 ### 🌐 APIs & Tools
 
-Actualmente explorando y construyendo APIs para conectar bots,
-herramientas y servicios de automatización.
+Construyendo y probando APIs para conectar bots, herramientas y servicios.
 
 ```text
 🌐 REST APIs
 ⚙️ Endpoints
-🤖 Integración con bots
 📦 JSON
+🤖 Integración con bots
 🔄 Automatización
 🧩 Servicios modulares
 ```
@@ -118,38 +115,38 @@ herramientas y servicios de automatización.
 ## 💻 Tecnologías
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=nodejs,js,git,github,html,css,json,linux,vercel&perline=9">
+  <img src="https://skillicons.dev/icons?i=nodejs,js,git,github,html,css,json,linux,vercel&perline=9" alt="Tecnologías">
 </p>
 
 ---
 
-## 📊 GitHub Stats
+## 📊 GitHub
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=AmilcarGit&show_icons=true&theme=transparent&hide_border=true&rank_icon=github" alt="GitHub Stats">
+  <a href="https://github.com/AmilcarGit?tab=repositories">
+    <img src="https://img.shields.io/badge/🚀%20REPOSITORIOS-Ver%20proyectos-181717?style=for-the-badge&logo=github" alt="Repositorios">
+  </a>
+  <a href="https://github.com/AmilcarGit?tab=stars">
+    <img src="https://img.shields.io/badge/⭐%20ESTRELLAS-Ver%20stars-F5C518?style=for-the-badge&logo=github&logoColor=black" alt="Stars">
+  </a>
+  <a href="https://github.com/AmilcarGit?tab=followers">
+    <img src="https://img.shields.io/badge/👥%20COMUNIDAD-Ver%20followers-25D366?style=for-the-badge&logo=github" alt="Followers">
+  </a>
 </p>
 
-<p align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AmilcarGit&layout=compact&theme=transparent&hide_border=true" alt="Top Languages">
-</p>
-
----
-
-## 🏆 GitHub Trophies
-
-<p align="center">
-<img src="https://github-profile-trophy.vercel.app/?username=AmilcarGit&theme=flat&no-frame=true&no-bg=true&margin-w=8&row=1" alt="GitHub Trophies">
-</p>
+> 💡 Las tarjetas dinámicas de servicios externos pueden dejar de cargar por límites o caídas del servicio. Esta versión usa badges estables y deja el efecto Snake generado dentro del propio repositorio.
 
 ---
 
 ## 🐍 Actividad
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/github-contribution-grid-snake.svg" alt="Contribution Snake">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/github-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/github-snake.svg">
+    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/github-snake.svg">
+  </picture>
 </p>
-
-> 💡 El efecto Snake requiere un workflow de GitHub Actions para generarse.
 
 ---
 
@@ -165,9 +162,9 @@ herramientas y servicios de automatización.
 ## 📫 Encuéntrame
 
 <p align="center">
-<a href="https://github.com/AmilcarGit">
-<img src="https://img.shields.io/badge/GitHub-AmilcarGit-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-</a>
+  <a href="https://github.com/AmilcarGit">
+    <img src="https://img.shields.io/badge/GitHub-AmilcarGit-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+  </a>
 </p>
 
 ---
@@ -187,6 +184,8 @@ herramientas y servicios de automatización.
 ### 🌿 AmilcarGit
 
 **Developer • Creator • Builder**
+
+<br>
 
 <a href="https://github.com/AmilcarGit/FamilyBot-MD">
 <img src="https://img.shields.io/badge/🌿%20FamilyBot--MD-Visitar%20proyecto-00C853?style=for-the-badge&logo=github&logoColor=white" alt="FamilyBot-MD">
