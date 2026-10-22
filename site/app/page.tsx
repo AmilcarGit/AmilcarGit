@@ -32,6 +32,7 @@ export default function Home() {
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioMasterRef = useRef<GainNode | null>(null);
   const oscillatorsRef = useRef<OscillatorNode[]>([]);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setBooted(true), 350);
@@ -51,7 +52,13 @@ export default function Home() {
       if (event.key === "Escape") { setMenuOpen(false); setTerminalOpen(false); }
     };
     window.addEventListener("keydown", onKey);
-    return () => { window.clearTimeout(timer); observer.disconnect(); window.removeEventListener("keydown", onKey); oscillatorsRef.current.forEach((oscillator) => { try { oscillator.stop(); } catch {} }); void audioContextRef.current?.close(); audioContextRef.current = null; audioMasterRef.current = null; oscillatorsRef.current = []; };
+    const cursor = cursorRef.current;
+    const supportsFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const onPointerMove = (event: PointerEvent) => {
+      if (cursor) cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0) translate(-50%, -50%)`;
+    };
+    if (supportsFinePointer) window.addEventListener("pointermove", onPointerMove, { passive: true });
+    return () => { window.clearTimeout(timer); observer.disconnect(); window.removeEventListener("keydown", onKey); if (supportsFinePointer) window.removeEventListener("pointermove", onPointerMove); oscillatorsRef.current.forEach((oscillator) => { try { oscillator.stop(); } catch {} }); void audioContextRef.current?.close(); audioContextRef.current = null; audioMasterRef.current = null; oscillatorsRef.current = []; };
   }, []);
 
   const playTone = () => {
@@ -102,6 +109,7 @@ export default function Home() {
   return (
     <main className={booted ? "site booted" : "site"}>
       <div className="noise" aria-hidden="true" />
+      <div className="cursor-glow" ref={cursorRef} aria-hidden="true" />
       <div className="ambient ambient-one" aria-hidden="true" />
       <div className="ambient ambient-two" aria-hidden="true" />
       <header className="topbar">
