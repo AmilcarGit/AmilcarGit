@@ -33,7 +33,7 @@ jobs:
         run: node scripts/update-project-health.mjs
       - name: Commit report if changed
         run: |
-          if git diff --quiet -- PROJECT_HEALTH.md; then
+          if git ls-files --error-unmatch PROJECT_HEALTH.md >/dev/null 2>&1 && git diff --quiet -- PROJECT_HEALTH.md; then
             echo "Project health report is already current."
             exit 0
           fi
