@@ -23,10 +23,11 @@ function isPlausibleAnswer(question: string, answer: string) {
   const cleaned = answer.trim();
   const words = normalize(cleaned).split(" ").filter((word) => word.length > 2);
   const uniqueRatio = new Set(words).size / Math.max(1, words.length);
-  const meaningfulQuestion = normalize(question).split(" ").filter((word) => word.length > 3 && !["para", "como", "cuando", "donde", "porque", "quiero", "puedes", "ayuda"].includes(word));
-  const overlap = meaningfulQuestion.filter((word) => words.includes(word)).length;
+  const meaningfulQuestion = normalize(question).split(" ").filter((word) => word.length > 3 && !["para", "como", "cuando", "donde", "porque", "quiero", "puedes", "ayuda", "explica", "explicame", "escribe", "dame", "cuentame", "sobre", "respuesta"].includes(word));
+  const openingWords = normalize(cleaned.slice(0, 220)).split(" ");
+  const overlap = meaningfulQuestion.filter((word) => openingWords.includes(word) || (word.length >= 6 && openingWords.some((candidate) => candidate.length >= 6 && (candidate.startsWith(word.slice(0, 5)) || word.startsWith(candidate.slice(0, 5)))))).length;
   const repeatedRun = /(.)\1{4,}/i.test(cleaned);
-  return cleaned.length >= 28 && words.length >= 5 && uniqueRatio >= 0.42 && !repeatedRun && (meaningfulQuestion.length === 0 || overlap >= 1);
+  return cleaned.length >= 28 && words.length >= 5 && uniqueRatio >= 0.42 && !repeatedRun && meaningfulQuestion.length > 0 && overlap >= 1;
 }
 
 function consumeRateLimit(ip: string) {
@@ -112,7 +113,6 @@ export async function POST(request: Request) {
           }, { headers: { "Cache-Control": "no-store" } });
         }
       } catch {
-        // El motor principal sigue disponible si el apoyo neuronal no carga.
       }
     }
     return NextResponse.json({

@@ -153,7 +153,7 @@ export default function Home() {
       <section className="feature-band" data-reveal><div className="feature-symbol">✳</div><div><p className="eyebrow">EXPERIMENTAR · APRENDER · COMPARTIR</p><h2>No se trata solo de escribir código.<br/><span>Se trata de abrir posibilidades.</span></h2></div><div className="feature-side"><span className="feature-line"/><p>INDEPENDIENTE<br/>POR NATURALEZA.</p></div></section>
 
       <section className="section ai-home-section" id="amilcar-ai">
-        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>05 /</span> CONVERSACIÓN EXPERIMENTAL</p><h2>Habla con <span>AMILCAR AI.</span></h2></div><p className="section-intro">Prueba el motor propio con apoyo neuronal local. Las respuestas se generan en el servidor del sitio, sin enviar tus mensajes a una API externa de IA.</p></div>
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>AI /</span> CONVERSACIÓN EXPERIMENTAL</p><h2>Habla con <span>AMILCAR AI.</span></h2></div><p className="section-intro">Prueba el motor propio con apoyo neuronal local. Las respuestas se generan en el servidor del sitio, sin enviar tus mensajes a una API externa de IA.</p></div>
         <AmilcarChat compact />
         <div className="ai-open-link" data-reveal><span>✧ CONVERSACIÓN COMPLETA</span><a href="/chat">Abrir la página independiente del chat <span>↗</span></a></div>
       </section>
