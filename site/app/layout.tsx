@@ -14,6 +14,17 @@ export const metadata: Metadata = {
     siteName: "AMILCARGIT",
     locale: "es_PE",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "AMILCARGIT — Un universo de ideas, código e inteligencia artificial" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AMILCARGIT — Un universo de ideas",
+    description: "Proyectos, herramientas web, bots y AMILCAR AI en un universo digital interactivo.",
+    images: ["/opengraph-image"],
+  },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: ["/icon.svg"],
   },
   robots: { index: true, follow: true },
 };
