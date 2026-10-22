@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Universe from "@/components/Universe";
+import AmilcarChat from "@/components/AmilcarChat";
 
 const projects = [
   { number: "01", name: "AMILCAR-AI", type: "INTELIGENCIA ARTIFICIAL", description: "Un proyecto experimental para explorar motores propios, SDKs y nuevas formas de integrar IA.", tags: ["AI LAB", "NODE.JS"], href: "https://github.com/AmilcarGit/AMILCAR-AI", icon: "✳", tone: "violet" },
@@ -116,7 +117,7 @@ export default function Home() {
         <a className="brand" href="#inicio" aria-label="AMILCARGIT, inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen}><span/><span/><span/></button>
         <nav className={menuOpen ? "navigation nav-open" : "navigation"} aria-label="Navegación principal">
-          <a href="#universo" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#terminal" onClick={() => { setTerminalOpen(true); setMenuOpen(false); }}>Terminal</a><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a>
+          <a href="#universo" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#terminal" onClick={() => { setTerminalOpen(true); setMenuOpen(false); }}>Terminal</a><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a>
           <button className="sound-button" onClick={playTone} aria-pressed={soundOn}><span className={soundOn ? "sound-bars playing" : "sound-bars"}><i/><i/><i/><i/></span>{soundOn ? "SONIDO ON" : "SONIDO OFF"}</button>
         </nav>
       </header>
@@ -127,7 +128,7 @@ export default function Home() {
           <p className="eyebrow"><span>✳</span> CREADOR DIGITAL INDEPENDIENTE</p>
           <h1>El futuro no se<br/>espera. <span>Se construye.</span></h1>
           <p className="hero-description">Un universo de código, ideas y experimentos. Explora mis proyectos, herramientas y sistemas creados para convertir la imaginación en tecnología.</p>
-          <div className="hero-actions"><a className="button button-primary" href="#proyectos">Explorar proyectos <span>↗</span></a><a className="button button-ghost" href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer"><span className="github-glyph">⌘</span> Abrir GitHub</a></div>
+          <div className="hero-actions"><a className="button button-primary" href="#proyectos">Explorar proyectos <span>↗</span></a><a className="button button-ghost" href="/chat">Hablar con AMILCAR AI <span>✳</span></a><a className="button button-ghost" href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer"><span className="github-glyph">⌘</span> Abrir GitHub</a></div>
           <div className="hero-proof"><div className="proof-avatars"><span>A</span><span>AI</span><span>⌘</span></div><p><strong>Ideas en evolución.</strong><br/>Código abierto, curiosidad infinita.</p></div>
         </div>
         <div className="hero-visual" id="universo">
@@ -150,6 +151,12 @@ export default function Home() {
       </section>
 
       <section className="feature-band" data-reveal><div className="feature-symbol">✳</div><div><p className="eyebrow">EXPERIMENTAR · APRENDER · COMPARTIR</p><h2>No se trata solo de escribir código.<br/><span>Se trata de abrir posibilidades.</span></h2></div><div className="feature-side"><span className="feature-line"/><p>INDEPENDIENTE<br/>POR NATURALEZA.</p></div></section>
+
+      <section className="section ai-home-section" id="amilcar-ai">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>05 /</span> CONVERSACIÓN EXPERIMENTAL</p><h2>Habla con <span>AMILCAR AI.</span></h2></div><p className="section-intro">Prueba el motor propio con apoyo neuronal local. Las respuestas se generan en el servidor del sitio, sin enviar tus mensajes a una API externa de IA.</p></div>
+        <AmilcarChat compact />
+        <div className="ai-open-link" data-reveal><span>✧ CONVERSACIÓN COMPLETA</span><a href="/chat">Abrir la página independiente del chat <span>↗</span></a></div>
+      </section>
 
       <section className="section about-section" id="sobre-mi">
         <div className="about-orb" data-reveal><div className="orb-ring orb-ring-one"/><div className="orb-ring orb-ring-two"/><div className="orb-core">A<span>✦</span></div><span className="orb-caption">CREATOR NODE</span></div>

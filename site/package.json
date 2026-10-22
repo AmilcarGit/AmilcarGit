@@ -13,7 +13,8 @@
     "next": "^16.0.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "three": "^0.180.0"
+    "three": "^0.180.0",
+    "amilcar-ai": "github:AmilcarGit/AMILCAR-AI#36a58b81c7123102c51dd5de4c4331645c9a6ed5"
   },
   "devDependencies": {
     "@types/node": "^22.15.0",

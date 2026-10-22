@@ -3,10 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amilcargit.vercel.app"),
-  title: "AMILCARGIT — Un universo de ideas",
-  description: "El universo digital de AmilcarGit: inteligencia artificial experimental, herramientas web, bots y proyectos de código abierto.",
+  title: "AMILCARGIT — Un universo de ideas y AMILCAR AI",
+  description: "Explora el universo digital de AmilcarGit y conversa con AMILCAR AI, un motor experimental con apoyo neuronal local y sin API externa.",
   applicationName: "AMILCARGIT Universe",
-  keywords: ["AmilcarGit", "desarrollo", "inteligencia artificial", "bots", "JavaScript", "open source"],
+  keywords: ["AmilcarGit", "AMILCAR AI", "chat IA local", "desarrollo", "bots", "JavaScript", "open source"],
   openGraph: {
     title: "AMILCARGIT — Un universo de ideas",
     description: "Explora proyectos, experimentos y herramientas en un universo digital interactivo.",
