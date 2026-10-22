@@ -52,6 +52,8 @@ jobs:
             --retry-wait-time 2
             --timeout 20
             --exclude 'https://img.shields.io/.*'
+            --exclude 'file://.*'
+            --exclude 'http://localhost:.*'
             --exclude 'https://skillicons.dev/.*'
             --exclude 'https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/.*'
             README.md
