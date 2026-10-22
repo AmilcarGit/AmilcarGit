@@ -34,6 +34,7 @@ export default function Home() {
   const audioMasterRef = useRef<GainNode | null>(null);
   const oscillatorsRef = useRef<OscillatorNode[]>([]);
   const cursorRef = useRef<HTMLDivElement>(null);
+  const terminalInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setBooted(true), 350);
@@ -96,6 +97,18 @@ export default function Home() {
       });
       setSoundOn(true);
     } catch { setSoundOn(false); }
+  };
+
+  const toggleTerminal = () => {
+    if (terminalOpen) {
+      setTerminalOpen(false);
+      return;
+    }
+    setTerminalOpen(true);
+    window.requestAnimationFrame(() => {
+      document.getElementById("terminal")?.scrollIntoView({ behavior: "smooth", block: "center" });
+      window.setTimeout(() => terminalInputRef.current?.focus({ preventScroll: true }), 450);
+    });
   };
 
   const runCommand = () => {
@@ -164,15 +177,15 @@ export default function Home() {
       </section>
 
       <section className="terminal-section" id="terminal">
-        <div className="section-heading terminal-heading" data-reveal><div><p className="eyebrow"><span>03 /</span> ACCESO EXPERIMENTAL</p><h2>Un poco de <span>terminal.</span></h2></div><button className="terminal-open" onClick={() => setTerminalOpen(!terminalOpen)}>{terminalOpen ? "Cerrar terminal −" : "Abrir terminal +"} </button></div>
-        <div className={terminalOpen ? "terminal-window terminal-expanded" : "terminal-window"} data-reveal><div className="terminal-titlebar"><div className="window-dots"><i/><i/><i/></div><span>amilcar@universe:~</span><span className="terminal-lock">◈ SAFE MODE</span></div><div className="terminal-content" aria-live="polite">{terminalLines.map((line,index)=><p className={line.startsWith("visitor@") ? "command-line" : "response-line"} key={`${index}-${line}`}>{line}</p>)}<form className="terminal-form" onSubmit={(event)=>{event.preventDefault();runCommand();}}><label htmlFor="terminal-input">visitor@amilcar:~$</label><input id="terminal-input" autoComplete="off" spellCheck={false} value={terminalInput} onChange={(event)=>setTerminalInput(event.target.value)} placeholder="escribe help..." /><button type="submit" aria-label="Ejecutar comando">↵</button></form></div><div className="terminal-bottom"><span><i/> DEMO LOCAL · SIN ACCESO AL SISTEMA</span><span>INTERACTIVE SHELL v1.0</span></div></div>
+        <div className="section-heading terminal-heading" data-reveal><div><p className="eyebrow"><span>03 /</span> ACCESO EXPERIMENTAL</p><h2>Un poco de <span>terminal.</span></h2></div><button className="terminal-open" onClick={toggleTerminal}>{terminalOpen ? "Cerrar terminal −" : "Abrir terminal +"} </button></div>
+        <div className={terminalOpen ? "terminal-window terminal-expanded" : "terminal-window"} data-reveal><div className="terminal-titlebar"><div className="window-dots"><i/><i/><i/></div><span>amilcar@universe:~</span><span className="terminal-lock">◈ SAFE MODE</span></div><div className="terminal-content" aria-live="polite">{terminalLines.map((line,index)=><p className={line.startsWith("visitor@") ? "command-line" : "response-line"} key={`${index}-${line}`}>{line}</p>)}<form className="terminal-form" onSubmit={(event)=>{event.preventDefault();runCommand();}}><label htmlFor="terminal-input">visitor@amilcar:~$</label><input id="terminal-input" ref={terminalInputRef} autoComplete="off" spellCheck={false} value={terminalInput} onChange={(event)=>setTerminalInput(event.target.value)} placeholder="escribe help..." /><button type="submit" aria-label="Ejecutar comando">↵</button></form></div><div className="terminal-bottom"><span><i/> DEMO LOCAL · SIN ACCESO AL SISTEMA</span><span>INTERACTIVE SHELL v1.0</span></div></div>
       </section>
 
       <section className="contact-section" data-reveal><div className="contact-grid"><div><p className="eyebrow"><span>04 /</span> SIGUIENTE TRANSMISIÓN</p><h2>Las buenas ideas<br/>no se quedan <span>en órbita.</span></h2></div><div className="contact-right"><p>¿Tienes una idea, encontraste un proyecto útil o quieres colaborar? Conectemos y hagamos algo interesante.</p><a className="button button-primary" href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">Conectar en GitHub <span>↗</span></a><div className="social-links"><a href="https://www.tiktok.com/@amilkargit1" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://github.com/AmilcarGit?tab=repositories" target="_blank" rel="noreferrer">Repositorios ↗</a><a href="https://whatsapp.com/channel/0029VbELVHt47XeHAIlbHu03" target="_blank" rel="noreferrer">Canal WhatsApp ↗</a></div></div></div></section>
 
       <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
 
-      <button className="floating-terminal" onClick={()=>setTerminalOpen(!terminalOpen)} aria-label="Abrir terminal interactiva"><span>⌘</span><small>TERMINAL</small></button>
+      <button className="floating-terminal" onClick={toggleTerminal} aria-label={terminalOpen ? "Cerrar terminal interactiva" : "Abrir terminal interactiva"} aria-expanded={terminalOpen}><span>⌘</span><small>TERMINAL</small></button>
       {secret && <div className="secret-overlay" role="dialog" aria-modal="true" aria-label="Mensaje secreto"><div className="secret-card"><button className="secret-close" onClick={()=>setSecret(false)} aria-label="Cerrar">×</button><span className="secret-star">✦</span><p className="eyebrow">EASTER EGG DESCUBIERTO</p><h2>Bienvenido al<br/><span>lado oculto.</span></h2><p>Las mejores ideas empiezan con curiosidad. Sigue explorando, sigue creando.</p><button className="button button-primary" onClick={()=>setSecret(false)}>Continuar explorando ↗</button></div></div>}
     </main>
   );
