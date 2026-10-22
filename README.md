@@ -13,7 +13,7 @@ Creo proyectos de código, automatización y experiencias digitales. Este perfil
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/JavaScript-ES- F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
+  <img src="https://img.shields.io/badge/JavaScript-ES-F7DF1E?style=flat-square&logo=javascript&logoColor=black" alt="JavaScript">
   <img src="https://img.shields.io/badge/Node.js-Backend-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js">
   <img src="https://img.shields.io/badge/WhatsApp-Bots-25D366?style=flat-square&logo=whatsapp&logoColor=white" alt="WhatsApp">
   <img src="https://img.shields.io/badge/Open_Source-Proyectos-7C3AED?style=flat-square&logo=github&logoColor=white" alt="Open source">
