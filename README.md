@@ -78,6 +78,32 @@ Me gusta construir proyectos prácticos, documentarlos y mejorarlos sin prometer
   </tr>
 </table>
 
+### 🎴 Tarjetas visuales de los proyectos
+
+<p align="center">
+  <a href="https://github.com/AmilcarGit/AMILCAR-AI"><img src="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/main/assets/card-amilcar-ai.svg" alt="AMILCAR-AI — proyecto de IA experimental" width="100%"></a>
+  <a href="https://github.com/AmilcarGit/AmilcarTools"><img src="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/main/assets/card-amilcartools.svg" alt="AmilcarTools — herramientas web" width="100%"></a>
+  <a href="https://github.com/AmilcarGit/YuiBot-MD"><img src="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/main/assets/card-yuibot.svg" alt="YuiBot-MD — bot de WhatsApp" width="100%"></a>
+  <a href="https://github.com/AmilcarGit/S7-Bot-OFC"><img src="https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/main/assets/card-s7-bot.svg" alt="S7-Bot-OFC — bot de WhatsApp" width="100%"></a>
+</p>
+
+## 🧭 Documentación y estado de los proyectos
+
+- 📚 [Guía central de instalación, compatibilidad y soporte](docs/GUIA-PROYECTOS.md)
+- 🩺 [Panel de salud de los repositorios](PROJECT_HEALTH.md) — se actualiza mediante GitHub Actions.
+- ⚙️ [Historial de comprobación de enlaces](https://github.com/AmilcarGit/AmilcarGit/actions/workflows/check-links.yml)
+- 🔄 [Workflow del panel de salud](https://github.com/AmilcarGit/AmilcarGit/actions/workflows/project-health.yml)
+
+<details>
+  <summary>🧰 Consejos rápidos antes de instalar un proyecto</summary>
+
+  - Revisa primero el README del repositorio específico.
+  - Comprueba la versión de Node.js y el sistema operativo requeridos.
+  - No compartas sesiones, tokens, claves API ni archivos `.env`.
+  - Ejecuta las pruebas indicadas por el proyecto; no des por hecho que todos los repositorios tienen las mismas pruebas.
+  - Si algo falla, abre un Issue en el repositorio correspondiente y elimina cualquier dato privado del registro.
+</details>
+
 ## 🤖 Bots de WhatsApp
 
 | Proyecto | Descripción | Enlace |
