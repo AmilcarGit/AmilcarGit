@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Universe from "@/components/Universe";
 
 const projects = [
@@ -29,6 +29,9 @@ export default function Home() {
   const [terminalLines, setTerminalLines] = useState<string[]>(["AMILCAR OS [web terminal]", "Escribe help para explorar comandos de demostración."]);
   const [secret, setSecret] = useState(false);
   const [booted, setBooted] = useState(false);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const audioMasterRef = useRef<GainNode | null>(null);
+  const oscillatorsRef = useRef<OscillatorNode[]>([]);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setBooted(true), 350);
@@ -48,18 +51,30 @@ export default function Home() {
       if (event.key === "Escape") { setMenuOpen(false); setTerminalOpen(false); }
     };
     window.addEventListener("keydown", onKey);
-    return () => { window.clearTimeout(timer); observer.disconnect(); window.removeEventListener("keydown", onKey); };
+    return () => { window.clearTimeout(timer); observer.disconnect(); window.removeEventListener("keydown", onKey); oscillatorsRef.current.forEach((oscillator) => { try { oscillator.stop(); } catch {} }); void audioContextRef.current?.close(); audioContextRef.current = null; audioMasterRef.current = null; oscillatorsRef.current = []; };
   }, []);
 
   const playTone = () => {
-    if (soundOn) { setSoundOn(false); return; }
+    if (soundOn) {
+      oscillatorsRef.current.forEach((oscillator) => { try { oscillator.stop(); } catch {} });
+      oscillatorsRef.current = [];
+      audioMasterRef.current?.disconnect();
+      audioMasterRef.current = null;
+      void audioContextRef.current?.close();
+      audioContextRef.current = null;
+      setSoundOn(false);
+      return;
+    }
     try {
       const AudioContextClass = window.AudioContext || (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
       if (!AudioContextClass) return;
       const context = new AudioContextClass();
       const master = context.createGain();
-      master.gain.value = 0.025;
+      master.gain.value = 0.018;
       master.connect(context.destination);
+      audioContextRef.current = context;
+      audioMasterRef.current = master;
+      oscillatorsRef.current = [];
       [110, 164.81, 220].forEach((frequency, index) => {
         const oscillator = context.createOscillator();
         const gain = context.createGain();
@@ -69,6 +84,7 @@ export default function Home() {
         oscillator.connect(gain);
         gain.connect(master);
         oscillator.start();
+        oscillatorsRef.current.push(oscillator);
       });
       setSoundOn(true);
     } catch { setSoundOn(false); }
