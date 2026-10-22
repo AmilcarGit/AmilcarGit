@@ -80,7 +80,7 @@ Mi objetivo es mantener los proyectos claros, útiles y fáciles de encontrar. L
 
 | Proyecto | Descripción | Enlace |
 |---|---|---|
-| **FamilyBot-MD1** | Proyecto de bot de WhatsApp | [Abrir repositorio](https://github.com/AmilcarGit/FamilyBot-MD1) |
+| **FamilyBot-MD1** | Bot de Telegram | [Abrir repositorio](https://github.com/AmilcarGit/FamilyBot-MD1) |
 | **TheEly-MD** | Proyecto de bot de WhatsApp | [Abrir repositorio](https://github.com/AmilcarGit/TheEly-MD) |
 | **yuianon** | Proyecto publicado en GitHub | [Abrir repositorio](https://github.com/AmilcarGit/yuianon) |
 
