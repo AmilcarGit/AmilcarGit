@@ -1,4 +1,4 @@
-name: Check profile links
+name: Check project links
 
 on:
   push:
@@ -20,18 +20,30 @@ permissions:
   contents: read
 
 concurrency:
-  group: profile-links-${{ github.ref }}
+  group: project-links-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   links:
-    name: Verify README links
+    name: Verify profile and project READMEs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout profile
         uses: actions/checkout@v4
 
-      - name: Check README links
+      - name: Download current README files from public projects
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p project-readmes
+          for repo in AmilcarTools AMILCAR-AI YuiBot-MD S7-Bot-OFC BaseBot YuiBoost FamilyBot-MD1 TheEly-MD yuianon; do
+            echo "Fetching README for ${repo}"
+            curl --fail --silent --show-error --location --retry 3 --retry-delay 2 \
+              "https://raw.githubusercontent.com/AmilcarGit/${repo}/main/README.md" \
+              --output "project-readmes/${repo}.md"
+          done
+
+      - name: Check links in profile and project READMEs
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
@@ -43,6 +55,7 @@ jobs:
             --exclude 'https://skillicons.dev/.*'
             --exclude 'https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/.*'
             README.md
+            project-readmes/*.md
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
