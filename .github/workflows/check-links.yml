@@ -1,0 +1,49 @@
+name: Check profile links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - assets/**
+      - .github/workflows/check-links.yml
+  pull_request:
+    paths:
+      - README.md
+      - assets/**
+      - .github/workflows/check-links.yml
+  schedule:
+    - cron: "23 8 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: profile-links-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  links:
+    name: Verify README links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check README links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --verbose
+            --no-progress
+            --retry 2
+            --timeout 20
+            --exclude-mail
+            --exclude 'https://img.shields.io/.*'
+            --exclude 'https://skillicons.dev/.*'
+            --exclude 'https://raw.githubusercontent.com/AmilcarGit/AmilcarGit/output/.*'
+            README.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
