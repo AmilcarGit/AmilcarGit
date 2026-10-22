@@ -6,6 +6,7 @@ on:
     paths:
       - scripts/update-project-health.mjs
       - .github/workflows/project-health.yml
+      - .github/workflows/security-audit.yml
   schedule:
     - cron: "17 9 * * 1"
   workflow_dispatch:
