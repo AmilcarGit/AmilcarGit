@@ -68,8 +68,8 @@ for (const name of repositories) {
   const workflowFiles = Array.isArray(workflowDir) ? workflowDir.filter(file => file.type === "file" && /\.(yml|yaml)$/i.test(file.name)) : [];
   let latestRun = null;
   if (workflowFiles.length) {
-    const runs = await api(`/repos/${owner}/${name}/actions/runs?per_page=1`);
-    latestRun = runs?.workflow_runs?.[0] || null;
+    const runs = await api(`/repos/${owner}/${name}/actions/runs?per_page=10`);
+    latestRun = runs?.workflow_runs?.find(run => run.status === "completed") || runs?.workflow_runs?.[0] || null;
   }
 
   rows.push({
