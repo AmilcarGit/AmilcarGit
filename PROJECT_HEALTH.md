@@ -6,15 +6,15 @@
 
 | Repositorio | README | Licencia detectada | package.json | Script de prueba/comprobación | Workflows | Último resultado de Actions | Última actividad (push) |
 |---|---:|---:|---:|---:|---:|---|---|
-| [AMILCAR-AI](https://github.com/AmilcarGit/AMILCAR-AI) | Sí | Sí | Sí | Sí | 2 | [Correcto](https://github.com/AmilcarGit/AMILCAR-AI/actions/runs/39760049587) | 2026-10-22 |
-| [AmilcarTools](https://github.com/AmilcarGit/AmilcarTools) | Sí | Sí | No | No aplica | 2 | [Correcto](https://github.com/AmilcarGit/AmilcarTools/actions/runs/39760089030) | 2026-10-22 |
-| [YuiBot-MD](https://github.com/AmilcarGit/YuiBot-MD) | Sí | Sí | Sí | Sí | 1 | [Correcto](https://github.com/AmilcarGit/YuiBot-MD/actions/runs/39760120206) | 2026-10-22 |
-| [S7-Bot-OFC](https://github.com/AmilcarGit/S7-Bot-OFC) | Sí | Sí | Sí | No | 1 | [Correcto](https://github.com/AmilcarGit/S7-Bot-OFC/actions/runs/39760101557) | 2026-10-22 |
-| [BaseBot](https://github.com/AmilcarGit/BaseBot) | Sí | Sí | Sí | Sí | 1 | [En curso: in_progress](https://github.com/AmilcarGit/BaseBot/actions/runs/39760319411) | 2026-10-22 |
-| [YuiBoost](https://github.com/AmilcarGit/YuiBoost) | Sí | Sí | No | No aplica | 1 | [Correcto](https://github.com/AmilcarGit/YuiBoost/actions/runs/36884399151) | 2026-09-08 |
-| [FamilyBot-MD1](https://github.com/AmilcarGit/FamilyBot-MD1) | Sí | Sí | Sí | No | 1 | [Correcto](https://github.com/AmilcarGit/FamilyBot-MD1/actions/runs/39760258943) | 2026-10-22 |
-| [TheEly-MD](https://github.com/AmilcarGit/TheEly-MD) | Sí | Sí | Sí | No | 1 | [En curso: queued](https://github.com/AmilcarGit/TheEly-MD/actions/runs/39760349275) | 2026-10-22 |
-| [yuianon](https://github.com/AmilcarGit/yuianon) | Sí | Sí | Sí | No | 1 | [Correcto](https://github.com/AmilcarGit/yuianon/actions/runs/39760275370) | 2026-10-22 |
+| [AMILCAR-AI](https://github.com/AmilcarGit/AMILCAR-AI) | Sí | Sí | Sí | Sí | 3 | [Correcto](https://github.com/AmilcarGit/AMILCAR-AI/actions/runs/39760957513) | 2026-10-22 |
+| [AmilcarTools](https://github.com/AmilcarGit/AmilcarTools) | Sí | Sí | No | No aplica | 3 | [Correcto](https://github.com/AmilcarGit/AmilcarTools/actions/runs/39761022699) | 2026-10-22 |
+| [YuiBot-MD](https://github.com/AmilcarGit/YuiBot-MD) | Sí | Sí | Sí | Sí | 2 | [Correcto](https://github.com/AmilcarGit/YuiBot-MD/actions/runs/39760969293) | 2026-10-22 |
+| [S7-Bot-OFC](https://github.com/AmilcarGit/S7-Bot-OFC) | Sí | Sí | Sí | No | 2 | [Correcto](https://github.com/AmilcarGit/S7-Bot-OFC/actions/runs/39760973789) | 2026-10-22 |
+| [BaseBot](https://github.com/AmilcarGit/BaseBot) | Sí | Sí | Sí | Sí | 2 | [Correcto](https://github.com/AmilcarGit/BaseBot/actions/runs/39760979029) | 2026-10-22 |
+| [YuiBoost](https://github.com/AmilcarGit/YuiBoost) | Sí | Sí | No | No aplica | 2 | [Correcto](https://github.com/AmilcarGit/YuiBoost/actions/runs/39760984434) | 2026-10-22 |
+| [FamilyBot-MD1](https://github.com/AmilcarGit/FamilyBot-MD1) | Sí | Sí | Sí | No | 2 | [Correcto](https://github.com/AmilcarGit/FamilyBot-MD1/actions/runs/39760989180) | 2026-10-22 |
+| [TheEly-MD](https://github.com/AmilcarGit/TheEly-MD) | Sí | Sí | Sí | No | 2 | [Correcto](https://github.com/AmilcarGit/TheEly-MD/actions/runs/39760995417) | 2026-10-22 |
+| [yuianon](https://github.com/AmilcarGit/yuianon) | Sí | Sí | Sí | No | 2 | [Correcto](https://github.com/AmilcarGit/yuianon/actions/runs/39761000771) | 2026-10-22 |
 
 ## Cómo interpretar este panel
 
