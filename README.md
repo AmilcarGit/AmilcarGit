@@ -7,6 +7,7 @@
   <a href="https://github.com/AmilcarGit?tab=stars"><img src="https://img.shields.io/badge/Stars-Mis%20estrellas-10131a?style=for-the-badge&logo=github&logoColor=35f2a1" alt="Estrellas"></a>
   <a href="https://github.com/AmilcarGit?tab=followers"><img src="https://img.shields.io/badge/Comunidad-Seguidores-10131a?style=for-the-badge&logo=github&logoColor=a78bfa" alt="Seguidores"></a>
   <a href="https://github.com/AmilcarGit/AmilcarGit/actions/workflows/check-links.yml"><img src="https://img.shields.io/github/actions/workflow/status/AmilcarGit/AmilcarGit/check-links.yml?branch=main&label=links&style=for-the-badge" alt="Estado del verificador de enlaces"></a>
+  <a href="https://github.com/AmilcarGit/AmilcarGit/actions/workflows/security-audit.yml"><img src="https://img.shields.io/badge/Seguridad-Auditor%C3%ADa%20programada-8b5cf6?style=for-the-badge&logo=githubactions&logoColor=white" alt="Auditoría de seguridad programada"></a>
 </p>
 
 **Desarrollador independiente · Código abierto · Proyectos para la comunidad**
@@ -91,6 +92,8 @@ Me gusta construir proyectos prácticos, documentarlos y mejorarlos sin prometer
 
 - 📚 [Guía central de instalación, compatibilidad y soporte](docs/GUIA-PROYECTOS.md)
 - 🩺 [Panel de salud de los repositorios](PROJECT_HEALTH.md) — se actualiza mediante GitHub Actions.
+- 🏷️ [Guía de versiones y publicaciones](docs/RELEASES.md) — proceso de revisión antes de crear releases.
+- 🔐 [Auditoría de seguridad programada](https://github.com/AmilcarGit/AmilcarGit/actions/workflows/security-audit.yml) — revisión de secretos y dependencias cuando hay lockfile.
 - ⚙️ [Historial de comprobación de enlaces](https://github.com/AmilcarGit/AmilcarGit/actions/workflows/check-links.yml)
 - 🔄 [Workflow del panel de salud](https://github.com/AmilcarGit/AmilcarGit/actions/workflows/project-health.yml)
 
