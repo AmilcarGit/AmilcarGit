@@ -12,12 +12,16 @@ import ThemeToggle from "@/components/ThemeToggle";
 import ProjectGallery from "@/components/ProjectGallery";
 
 const commands: Record<string, string> = {
-  help: "Comandos disponibles: help, about, projects, ai, tools, socials, clear",
+  help: "Comandos: help, about, projects, ai, tools, socials, skills, version, status, contact, clear",
   about: "AMILCARGIT // creador independiente. Construyendo bots, herramientas, experiencias web e IA experimental.",
   projects: "6 nodos destacados encontrados. Desplázate hasta [ PROYECTOS ] para explorar el mapa completo.",
   ai: "AMILCAR-AI :: proyecto experimental en evolución. Sin promesas falsas ni capacidades inventadas.",
   tools: "AMILCARTOOLS :: laboratorio web disponible en https://amilcartools.vercel.app",
   socials: "GITHUB :: github.com/AmilcarGit | TIKTOK :: @amilkargit1",
+  skills: "WEB :: JavaScript / React / Next.js | BOTS :: Node.js / Baileys / Telegram | MOBILE :: Android / Termux | IA :: AMILCAR-AI experimental",
+  version: "AMILCARGIT UNIVERSE // 2.0 · PORTFOLIO EXPANSION",
+  status: "WEBGL :: INTERACTIVE | CHAT :: LOCAL ENGINE | SHELL :: DEMO MODE | PRIVACY :: LOCAL-FIRST",
+  contact: "CONTACTO :: Usa el formulario de la sección [ CONTACTO ] para preparar un correo.",
 };
 
 export default function Home() {
@@ -223,7 +227,7 @@ export default function Home() {
 
       <section className="contact-section" id="contacto" data-reveal><div className="contact-grid"><div><p className="eyebrow"><span>06 /</span> HABLEMOS</p><h2 data-en="Have an idea? Let’s build it.">¿Tienes una idea?<br/><span>Hagámosla realidad.</span></h2><p className="contact-note">Cuéntame qué te gustaría construir o en qué proyecto te gustaría colaborar.</p><div className="social-links"><a href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.tiktok.com/@amilkargit1" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://whatsapp.com/channel/0029VbELVHt47XeHAIlbHu03" target="_blank" rel="noreferrer">Canal WhatsApp ↗</a></div></div><div className="contact-right"><ServiceContact /></div></div></section>
 
-      <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><div className="footer-links"><a href="/cv">Perfil / CV</a><a href="/privacidad">Privacidad</a><a href="/condiciones">Condiciones</a><a href="/preguntas">FAQ</a><a href="/novedades">Novedades</a></div><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
+      <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><div className="footer-links"><a href="/cv">Perfil / CV</a><a href="/privacidad">Privacidad</a><a href="/condiciones">Condiciones</a><a href="/preguntas">FAQ</a><a href="/novedades">Novedades</a><a href="/agradecimientos">Agradecimientos</a></div><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
 
       <button className="floating-terminal" onClick={toggleTerminal} aria-label={terminalOpen ? "Cerrar terminal interactiva" : "Abrir terminal interactiva"} aria-expanded={terminalOpen}><span>⌘</span><small>TERMINAL</small></button>
       {secret && <div className="secret-overlay" role="dialog" aria-modal="true" aria-label="Mensaje secreto"><div className="secret-card"><button className="secret-close" onClick={()=>setSecret(false)} aria-label="Cerrar">×</button><span className="secret-star">✦</span><p className="eyebrow">EASTER EGG DESCUBIERTO</p><h2>Bienvenido al<br/><span>lado oculto.</span></h2><p>Las mejores ideas empiezan con curiosidad. Sigue explorando, sigue creando.</p><button className="button button-primary" onClick={()=>setSecret(false)}>Continuar explorando ↗</button></div></div>}
