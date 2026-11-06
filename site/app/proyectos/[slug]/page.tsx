@@ -1,0 +1,7 @@
+import type {Metadata} from "next";
+import Link from "next/link";
+import {notFound} from "next/navigation";
+import {projects} from "@/data/projects";
+export function generateStaticParams(){return projects.map(project=>({slug:project.slug}));}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const p=projects.find(x=>x.slug===slug);return p?{title:p.name+" | Proyectos AMILCARGIT",description:p.description,openGraph:{title:p.name+" — AMILCARGIT",description:p.description}}:{title:"Proyecto no encontrado"};}
+export default async function ProjectPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=projects.find(x=>x.slug===slug);if(!p)notFound();const labels={experimental:"Experimental",active:"Activo",maintenance:"Mantenimiento"};return <main className="simple-page project-detail"><Link href="/#proyectos">← Volver a proyectos</Link><p className="eyebrow">{p.number} / {p.category}</p><span className={"project-status status-"+p.status}>{labels[p.status]}</span><h1>{p.name}<span>.</span></h1><p className="project-lead">{p.longDescription}</p><h2>Qué encontrarás</h2><ul>{p.highlights.map(x=><li key={x}>{x}</li>)}</ul><div className="detail-tags">{p.tags.map(x=><span key={x}>{x}</span>)}</div><div className="detail-actions"><a className="button button-primary" href={p.repo} target="_blank" rel="noreferrer">Ver repositorio ↗</a>{p.demo&&<a className="button button-ghost" href={p.demo} target="_blank" rel="noreferrer">Abrir demostración ↗</a>}</div></main>}
