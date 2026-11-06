@@ -1,0 +1,4 @@
+import Link from "next/link";
+export const metadata={title:"Novedades | AMILCARGIT",description:"Registro local de cambios y mejoras del universo AMILCARGIT."};
+const updates=[["Universo híbrido profesional","Renovación de navegación, presentación, catálogo de proyectos y páginas informativas.","2026"],["AMILCAR AI","Mejoras de interfaz para probar el motor experimental local.","2026"],["Universo 3D","Planeta interactivo creado con Three.js y ajustes para dispositivos móviles.","2026"]];
+export default function Updates(){return <main className="simple-page"><Link href="/">← AMILCARGIT</Link><p className="eyebrow">CHANGELOG</p><h1>El proyecto sigue <span>evolucionando.</span></h1><p>Registro de hitos documentados en el sitio; no representa una consulta automática de actividad de GitHub.</p><div className="timeline">{updates.map(([n,d,y],i)=><article key={n}><span>{y}</span><div><h2>{n}</h2><p>{d}</p></div></article>)}</div></main>}
