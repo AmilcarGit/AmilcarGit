@@ -1,0 +1,3 @@
+"use client";
+import {useEffect,useState} from "react";
+export default function ThemeToggle(){const [light,setLight]=useState(false);useEffect(()=>{const saved=localStorage.getItem("amilcargit:theme")==="light";setLight(saved);document.documentElement.dataset.theme=saved?"light":"dark";},[]);const toggle=()=>{const next=!light;setLight(next);document.documentElement.dataset.theme=next?"light":"dark";localStorage.setItem("amilcargit:theme",next?"light":"dark");};return <button className="theme-toggle" onClick={toggle} aria-pressed={light} aria-label={light?"Activar tema oscuro":"Activar tema claro"}>{light?"☾":"☼"}</button>}
