@@ -3,15 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Universe from "@/components/Universe";
 import AmilcarChat from "@/components/AmilcarChat";
-
-const projects = [
-  { number: "01", name: "AMILCAR-AI", type: "INTELIGENCIA ARTIFICIAL", description: "Un proyecto experimental para explorar motores propios, SDKs y nuevas formas de integrar IA.", tags: ["AI LAB", "NODE.JS"], href: "https://github.com/AmilcarGit/AMILCAR-AI", icon: "✳", tone: "violet" },
-  { number: "02", name: "AmilcarTools", type: "WEB TOOLKIT", description: "Un laboratorio de herramientas web para texto, código, datos, imágenes y productividad.", tags: ["WEB", "UTILIDADES"], href: "https://amilcartools.vercel.app", icon: "⌘", tone: "cyan" },
-  { number: "03", name: "YuiBot-MD", type: "WHATSAPP AUTOMATION", description: "Bot modular de WhatsApp Multi-Device, creado para experimentar y personalizar comandos.", tags: ["NODE.JS", "BOT"], href: "https://github.com/AmilcarGit/YuiBot-MD", icon: "✿", tone: "pink" },
-  { number: "04", name: "S7-Bot-OFC", type: "SECTOR 7 SYSTEMS", description: "Un bot de WhatsApp con comandos, vinculación y funciones de administración.", tags: ["WHATSAPP", "AUTOMATION"], href: "https://github.com/AmilcarGit/S7-Bot-OFC", icon: "✦", tone: "blue" },
-  { number: "05", name: "YuiBoost", type: "ANDROID / TERMUX", description: "Utilidades y diagnósticos para Termux, con límites claros según permisos disponibles.", tags: ["ANDROID", "CLI"], href: "https://github.com/AmilcarGit/YuiBoost", icon: "⌁", tone: "green" },
-  { number: "06", name: "FamilyBot-MD1", type: "TELEGRAM SYSTEMS", description: "Proyecto de bot para Telegram con comandos, ayuda y herramientas para comunidades.", tags: ["TELEGRAM", "NODE.JS"], href: "https://github.com/AmilcarGit/FamilyBot-MD1", icon: "◈", tone: "orange" },
-];
+import ProjectExplorer from "@/components/ProjectExplorer";
+import LocalInsights from "@/components/LocalInsights";
+import UniverseMap from "@/components/UniverseMap";
+import ServiceContact from "@/components/ServiceContact";
+import LocaleToggle from "@/components/LocaleToggle";
 
 const commands: Record<string, string> = {
   help: "Comandos disponibles: help, about, projects, ai, tools, socials, clear",
@@ -131,7 +127,7 @@ export default function Home() {
         <a className="brand" href="#inicio" aria-label="AMILCARGIT, inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen}><span/><span/><span/></button>
         <nav className={menuOpen ? "navigation nav-open" : "navigation"} aria-label="Navegación principal">
-          <a href="#universo" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#tecnologias" onClick={() => setMenuOpen(false)}>Tecnologías</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a><a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a>
+          <a href="#universo" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#laboratorio" onClick={() => setMenuOpen(false)}>Laboratorio</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a><a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a><LocaleToggle />
           <button className="sound-button" onClick={playTone} aria-pressed={soundOn}><span className={soundOn ? "sound-bars playing" : "sound-bars"}><i/><i/><i/><i/></span>{soundOn ? "SONIDO ON" : "SONIDO OFF"}</button>
         </nav>
       </header>
@@ -161,8 +157,13 @@ export default function Home() {
 
       <section className="section projects-section" id="proyectos">
         <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01 /</span> EL MAPA ESTELAR</p><h2>Ideas convertidas<br/><span>en proyectos reales.</span></h2></div><p className="section-intro">Una selección de proyectos propios: herramientas, automatización e inteligencia artificial experimental. Entra, revisa el código y descubre qué puedes construir.</p></div>
-        <div className="project-grid">{projects.map((project) => <a className={`project-card tone-${project.tone}`} href={project.href} key={project.name} target="_blank" rel="noreferrer" data-reveal><div className="card-top"><span className="project-number">{project.number} / NODE</span><span className="card-arrow">↗</span></div><div className="project-icon">{project.icon}</div><p className="project-type">{project.type}</p><h3>{project.name}</h3><p className="project-description">{project.description}</p><div className="tag-list">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div><div className="card-footer"><span>VER PROYECTO</span><span>↗</span></div></a>)}</div>
+        <ProjectExplorer />
         <div className="all-projects" data-reveal><span>¿Quieres ver todo el mapa?</span><a href="https://github.com/AmilcarGit?tab=repositories" target="_blank" rel="noreferrer">Todos los repositorios <span>↗</span></a></div>
+      </section>
+
+      <section className="section stats-section" id="estadisticas">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01.5 /</span> ACTIVIDAD DEL UNIVERSO</p><h2>Un vistazo al <span>ecosistema.</span></h2></div><p className="section-intro">Datos del catálogo y de este navegador. No consultamos una API externa ni enviamos estadísticas a terceros.</p></div>
+        <LocalInsights />
       </section>
 
       <section className="feature-band" data-reveal><div className="feature-symbol">✳</div><div><p className="eyebrow">EXPERIMENTAR · APRENDER · COMPARTIR</p><h2>Construir es aprender.<br/><span>Compartir hace que avance.</span></h2></div><div className="feature-side"><span className="feature-line"/><p>INDEPENDIENTE<br/>POR NATURALEZA.</p></div></section>
@@ -177,6 +178,12 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section trajectory-section" id="trayectoria">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>02.5 /</span> MI RECORRIDO</p><h2>Aprender haciendo.<br/><span>Construir compartiendo.</span></h2></div><p className="section-intro">Un camino práctico: curiosidad, prototipos, pruebas y proyectos públicos.</p></div>
+        <div className="journey-cards"><article><span>01 / EXPLORAR</span><h3>Curiosidad</h3><p>Investigar tecnologías y detectar ideas que merecen convertirse en proyectos.</p></article><article><span>02 / CONSTRUIR</span><h3>Experimentación</h3><p>Crear, probar y aprender desde el código, incluso desde Android y Termux.</p></article><article><span>03 / COMPARTIR</span><h3>Código abierto</h3><p>Documentar avances y abrir repositorios para que otras personas puedan explorar.</p></article></div>
+        <a className="text-link" href="/trayectoria">Leer mi trayectoria completa ↗</a>
+      </section>
+
       <section className="section ai-home-section" id="amilcar-ai">
         <div className="section-heading" data-reveal><div><p className="eyebrow"><span>AI /</span> CONVERSACIÓN EXPERIMENTAL</p><h2>Habla con <span>AMILCAR AI.</span></h2></div><p className="section-intro">Un proyecto en desarrollo que explora generación de respuestas con un motor propio y apoyo neuronal local. No utiliza una API externa de IA; sus respuestas siguen siendo experimentales y pueden equivocarse.</p></div>
         <AmilcarChat compact />
@@ -188,14 +195,29 @@ export default function Home() {
         <div className="about-copy" data-reveal><p className="eyebrow"><span>03 /</span> DETRÁS DEL CÓDIGO</p><h2>Hola, soy<br/><span>AmilcarGit.</span></h2><p>Soy desarrollador independiente y creador de proyectos digitales. Me interesa construir herramientas útiles, automatizar tareas y explorar nuevas formas de crear software.</p><p>Aprendo haciendo: pruebo ideas, reviso lo que no funciona y mejoro cada proyecto paso a paso. Este sitio reúne ese proceso y deja el código al alcance de quien quiera explorarlo.</p><div className="skill-cloud"><span>JavaScript</span><span>Node.js</span><span>Next.js</span><span>IA experimental</span><span>Termux</span><span>Open source</span></div><a className="text-link" href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">Conoce mi GitHub <span>↗</span></a></div>
       </section>
 
+      <section className="section lab-section" id="laboratorio">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>04 /</span> LABORATORIO EXPERIMENTAL</p><h2>Un universo de <span>prototipos.</span></h2></div><p className="section-intro">Explora los nodos de proyectos y los experimentos que todavía están evolucionando.</p></div>
+        <UniverseMap />
+        <div className="lab-links"><a href="/laboratorio">Ver laboratorio completo ↗</a><a href="/novedades">Novedades y versiones ↗</a><a href="/preguntas">Preguntas frecuentes ↗</a></div>
+      </section>
+      <section className="section services-section" id="servicios">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>04.5 /</span> COLABORACIONES</p><h2>Ideas que podemos <span>construir.</span></h2></div><p className="section-intro">Áreas de trabajo y propuestas que podemos explorar juntos.</p></div>
+        <div className="service-grid"><article><span>01</span><h3>Desarrollo web</h3><p>Experiencias y herramientas web adaptadas a cada idea.</p></article><article><span>02</span><h3>Bots y automatización</h3><p>Comandos, flujos y herramientas para comunidades.</p></article><article><span>03</span><h3>Herramientas digitales</h3><p>Utilidades centradas en resolver tareas concretas.</p></article><article><span>04</span><h3>Código abierto</h3><p>Documentación, pruebas y colaboración en repositorios.</p></article></div>
+        <a className="text-link" href="/servicios">Conocer áreas de colaboración ↗</a>
+      </section>
+      <section className="section faq-preview" id="preguntas">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>05 /</span> RESPUESTAS RÁPIDAS</p><h2>Preguntas <span>frecuentes.</span></h2></div><a className="text-link" href="/preguntas">Ver todas las preguntas ↗</a></div>
+        <div className="faq-list"><details><summary>¿AMILCAR AI depende de una API externa?</summary><p>No. El sitio utiliza el paquete AMILCAR-AI integrado en el proyecto. Sus respuestas son experimentales y pueden equivocarse.</p></details><details><summary>¿Puedo revisar o reutilizar los proyectos?</summary><p>Sí, visita sus repositorios y consulta la licencia y documentación de cada uno.</p></details><details><summary>¿Se guardan mis preferencias y conversaciones?</summary><p>Los favoritos, preferencias y el historial del chat pueden guardarse localmente en tu navegador, no en una cuenta sincronizada.</p></details></div>
+      </section>
+
       <section className="terminal-section" id="terminal">
         <div className="section-heading terminal-heading" data-reveal><div><p className="eyebrow"><span>04 /</span> UNA PEQUEÑA DEMOSTRACIÓN</p><h2>Explora la <span>terminal demo.</span></h2></div><button className="terminal-open" onClick={toggleTerminal}>{terminalOpen ? "Cerrar terminal −" : "Abrir terminal +"} </button></div>
         <div className={terminalOpen ? "terminal-window terminal-expanded" : "terminal-window"} data-reveal><div className="terminal-titlebar"><div className="window-dots"><i/><i/><i/></div><span>amilcar@universe:~</span><span className="terminal-lock">◈ SAFE MODE</span></div><div className="terminal-content" aria-live="polite">{terminalLines.map((line,index)=><p className={line.startsWith("visitor@") ? "command-line" : "response-line"} key={`${index}-${line}`}>{line}</p>)}<form className="terminal-form" onSubmit={(event)=>{event.preventDefault();runCommand();}}><label htmlFor="terminal-input">visitor@amilcar:~$</label><input id="terminal-input" ref={terminalInputRef} autoComplete="off" spellCheck={false} value={terminalInput} onChange={(event)=>setTerminalInput(event.target.value)} placeholder="escribe help..." /><button type="submit" aria-label="Ejecutar comando">↵</button></form></div><div className="terminal-bottom"><span><i/> DEMO LOCAL · SIN ACCESO AL SISTEMA</span><span>INTERACTIVE SHELL v1.0</span></div></div>
       </section>
 
-      <section className="contact-section" id="contacto" data-reveal><div className="contact-grid"><div><p className="eyebrow"><span>05 /</span> HABLEMOS</p><h2>¿Tienes una idea?<br/><span>Hagámosla realidad.</span></h2></div><div className="contact-right"><p>Si encontraste algo útil, tienes una propuesta o quieres colaborar en un proyecto, puedes escribirme o revisar lo que estoy construyendo.</p><a className="button button-primary" href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">Conectar en GitHub <span>↗</span></a><div className="social-links"><a href="https://www.tiktok.com/@amilkargit1" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://github.com/AmilcarGit?tab=repositories" target="_blank" rel="noreferrer">Repositorios ↗</a><a href="https://whatsapp.com/channel/0029VbELVHt47XeHAIlbHu03" target="_blank" rel="noreferrer">Canal WhatsApp ↗</a></div></div></div></section>
+      <section className="contact-section" id="contacto" data-reveal><div className="contact-grid"><div><p className="eyebrow"><span>06 /</span> HABLEMOS</p><h2>¿Tienes una idea?<br/><span>Hagámosla realidad.</span></h2><p className="contact-note">Cuéntame qué te gustaría construir o en qué proyecto te gustaría colaborar.</p><div className="social-links"><a href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.tiktok.com/@amilkargit1" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://whatsapp.com/channel/0029VbELVHt47XeHAIlbHu03" target="_blank" rel="noreferrer">Canal WhatsApp ↗</a></div></div><div className="contact-right"><ServiceContact /></div></div></section>
 
-      <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
+      <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><div className="footer-links"><a href="/cv">Perfil / CV</a><a href="/privacidad">Privacidad</a><a href="/condiciones">Condiciones</a><a href="/preguntas">FAQ</a><a href="/novedades">Novedades</a></div><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
 
       <button className="floating-terminal" onClick={toggleTerminal} aria-label={terminalOpen ? "Cerrar terminal interactiva" : "Abrir terminal interactiva"} aria-expanded={terminalOpen}><span>⌘</span><small>TERMINAL</small></button>
       {secret && <div className="secret-overlay" role="dialog" aria-modal="true" aria-label="Mensaje secreto"><div className="secret-card"><button className="secret-close" onClick={()=>setSecret(false)} aria-label="Cerrar">×</button><span className="secret-star">✦</span><p className="eyebrow">EASTER EGG DESCUBIERTO</p><h2>Bienvenido al<br/><span>lado oculto.</span></h2><p>Las mejores ideas empiezan con curiosidad. Sigue explorando, sigue creando.</p><button className="button button-primary" onClick={()=>setSecret(false)}>Continuar explorando ↗</button></div></div>}
