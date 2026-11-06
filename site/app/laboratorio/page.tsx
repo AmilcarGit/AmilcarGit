@@ -1,0 +1,4 @@
+import Link from "next/link";
+export const metadata={title:"Laboratorio | AMILCARGIT",description:"Experimentos y prototipos tecnológicos de AmilcarGit."};
+const labs=[["AMI-Base","Apoyo neuronal local experimental dentro del ecosistema AMILCAR-AI.","En evaluación"],["Universo interactivo","Experimentos visuales con Three.js y renderizado en navegador.","En evolución"],["Herramientas local-first","Utilidades que procesan información en el dispositivo sin depender de servicios remotos.","Exploración"]];
+export default function Lab(){return <main className="simple-page"><Link href="/">← AMILCARGIT</Link><p className="eyebrow">R&D / LABORATORIO ABIERTO</p><h1>Ideas en <span>experimentación.</span></h1><p>Prototipos y pruebas. Su presencia aquí no significa que sean productos terminados.</p><div className="feature-list">{labs.map(([n,d,s])=><article key={n}><span>{s}</span><h2>{n}</h2><p>{d}</p></article>)}</div></main>}
