@@ -12,7 +12,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import ProjectGallery from "@/components/ProjectGallery";
 
 const commands: Record<string, string> = {
-  help: "Comandos: help, about, projects, ai, tools, socials, skills, version, status, contact, clear",
+  help: "Comandos: help, about, projects, ai, tools, socials, skills, version, status, contact, open projects, clear",
   about: "AMILCARGIT // creador independiente. Construyendo bots, herramientas, experiencias web e IA experimental.",
   projects: "6 nodos destacados encontrados. Desplázate hasta [ PROYECTOS ] para explorar el mapa completo.",
   ai: "AMILCAR-AI :: proyecto experimental en evolución. Sin promesas falsas ni capacidades inventadas.",
@@ -116,7 +116,8 @@ export default function Home() {
   const runCommand = () => {
     const input = terminalInput.trim().toLowerCase();
     if (!input) return;
-    const output = input === "clear" ? [] : [`visitor@amilcar:~$ ${terminalInput}`, commands[input] || "Comando no reconocido. Escribe help para ver los comandos disponibles."];
+    const output = input === "clear" ? [] : [`visitor@amilcar:~$ ${terminalInput}`, input === "open projects" ? "Abriendo el mapa de proyectos…" : commands[input] || "Comando no reconocido. Escribe help para ver los comandos disponibles."];
+    if (input === "open projects") window.setTimeout(() => document.getElementById("proyectos")?.scrollIntoView({ behavior: "smooth" }), 100);
     setTerminalLines((previous) => input === "clear" ? ["Terminal limpia. Escribe help para comenzar."] : [...previous, ...output].slice(-12));
     setTerminalInput("");
     if (input === "amilcar") setSecret(true);
