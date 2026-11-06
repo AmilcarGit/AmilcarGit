@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280" role="img" aria-labelledby="title desc">
+  <title id="title">S7-Bot-OFC — AmilcarGit</title>
+  <desc id="desc">Bot con vinculación por código y herramientas de administración. Consulta requisitos actuales.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080b12"/><stop offset="1" stop-color="#151226"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#7dd3fc"/></linearGradient>
+    <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse"><path d="M26 0H0V26" fill="none" stroke="#38bdf8" stroke-opacity=".12"/></pattern>
+  </defs>
+  <rect width="900" height="280" rx="24" fill="url(#bg)"/><rect width="900" height="280" rx="24" fill="url(#grid)"/>
+  <path d="M630 0V55H710V94H780M900 200H820V228H740M0 220H60V190H100" fill="none" stroke="#38bdf8" stroke-opacity=".45" stroke-width="2"/>
+  <circle cx="780" cy="94" r="5" fill="#38bdf8"/><circle cx="740" cy="228" r="4" fill="#7dd3fc"/>
+  <rect x="42" y="42" width="6" height="196" rx="3" fill="url(#line)"/>
+  <text x="72" y="68" font-family="monospace" font-size="14" letter-spacing="4" fill="#38bdf8">AMILCARGIT / OPEN SOURCE</text>
+  <text x="70" y="125" font-family="Arial,Helvetica,sans-serif" font-size="44" font-weight="700" fill="#f8fafc">S7-Bot-OFC</text>
+  <text x="72" y="160" font-family="Arial,Helvetica,sans-serif" font-size="19" fill="#7dd3fc">WhatsApp · Node.js · ESM</text>
+  <text x="72" y="195" font-family="Arial,Helvetica,sans-serif" font-size="15" fill="#cbd5e1">Bot con vinculación por código y herramientas de administración. Consulta requisitos actuales.</text>
+  <rect x="72" y="218" width="205" height="34" rx="17" fill="#38bdf8" fill-opacity=".13" stroke="#38bdf8" stroke-opacity=".7"/>
+  <text x="174" y="240" font-family="monospace" font-size="13" text-anchor="middle" fill="#7dd3fc">VER REPOSITORIO ↗</text>
+  <g transform="translate(790 143)"><circle r="52" fill="#090c14" stroke="#38bdf8" stroke-width="2" stroke-opacity=".85"/><circle r="39" fill="none" stroke="#7dd3fc" stroke-opacity=".65" stroke-dasharray="4 7"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="32s" repeatCount="indefinite"/></circle><path d="M-17 -16L-34 0L-17 16M17 -16L34 0L17 16M7 -25L-7 25" fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></g>
+</svg>
