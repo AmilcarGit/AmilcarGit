@@ -88,7 +88,7 @@ export default function Universe() {
     const dust = new THREE.Points(dustGeometry, new THREE.PointsMaterial({ color: 0xe1caff, size: 0.035, transparent: true, opacity: 0.65 }));
     scene.add(dust);
 
-    let targetX = 0; let targetY = 0; let pointerX = 0; let pointerY = 0; let frame = 0;
+    let targetX = 0; let targetY = 0; let pointerX = 0; let pointerY = 0; let frame = 0; let isVisible = false; let pageVisible = !document.hidden;
     const onPointerMove = (event: PointerEvent) => {
       const rect = host.getBoundingClientRect();
       targetY = ((event.clientX - rect.left) / rect.width - 0.5) * 0.55;
@@ -103,7 +103,7 @@ export default function Universe() {
     host.addEventListener("pointerleave", onPointerLeave);
     const observer = new ResizeObserver(resize); observer.observe(host);
     const animate = () => {
-      frame = window.requestAnimationFrame(animate);
+      if (!isVisible || !pageVisible) return;
       if (!reducedMotion) {
         planet.rotation.y += 0.0018; stars.rotation.y -= 0.00012; dust.rotation.z += 0.00025;
         pointerX += (targetX - pointerX) * 0.035; pointerY += (targetY - pointerY) * 0.035;
@@ -111,11 +111,23 @@ export default function Universe() {
         ring.rotation.z += 0.00035; ringTwo.rotation.z -= 0.0002;
       }
       renderer.render(scene, camera);
+      if (!reducedMotion) frame = window.requestAnimationFrame(animate);
     };
-    animate();
+    const visibilityObserver = new IntersectionObserver((entries) => {
+      isVisible = entries.some((entry) => entry.isIntersecting);
+      if (isVisible && pageVisible && !frame) animate();
+      else if ((!isVisible || !pageVisible) && frame) { window.cancelAnimationFrame(frame); frame = 0; }
+    }, { threshold: 0.02 });
+    const onPageVisibility = () => {
+      pageVisible = !document.hidden;
+      if (isVisible && pageVisible && !frame) animate();
+      else if ((!isVisible || !pageVisible) && frame) { window.cancelAnimationFrame(frame); frame = 0; }
+    };
+    visibilityObserver.observe(host);
+    document.addEventListener("visibilitychange", onPageVisibility);
     setReady(true);
     return () => {
-      window.cancelAnimationFrame(frame); observer.disconnect();
+      window.cancelAnimationFrame(frame); visibilityObserver.disconnect(); document.removeEventListener("visibilitychange", onPageVisibility); observer.disconnect();
       host.removeEventListener("pointermove", onPointerMove); host.removeEventListener("pointerleave", onPointerLeave);
       geometry.dispose(); material.map?.dispose(); material.dispose(); atmosphere.geometry.dispose(); (atmosphere.material as THREE.Material).dispose();
       ring.geometry.dispose(); (ring.material as THREE.Material).dispose(); ringTwo.geometry.dispose(); (ringTwo.material as THREE.Material).dispose();
