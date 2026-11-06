@@ -1,0 +1,11 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {existsSync,readFileSync} from "node:fs";
+import {resolve} from "node:path";
+const root=process.cwd();
+const read=(path)=>readFileSync(resolve(root,path),"utf8");
+test("el catálogo contiene proyectos únicos y enlazables",()=>{const source=read("data/projects.ts");const slugs=[...source.matchAll(/slug:"([^"]+)"/g)].map(x=>x[1]);assert.ok(slugs.length>=6);assert.equal(new Set(slugs).size,slugs.length);assert.match(source,/AMILCAR-AI/);assert.match(source,/FamilyBot-MD1/);});
+test("las rutas principales del portafolio existen",()=>{for(const path of ["app/page.tsx","app/chat/page.tsx","app/laboratorio/page.tsx","app/novedades/page.tsx","app/servicios/page.tsx","app/trayectoria/page.tsx","app/privacidad/page.tsx","app/condiciones/page.tsx","app/preguntas/page.tsx","app/cv/page.tsx","app/proyectos/[slug]/page.tsx","app/not-found.tsx","app/manifest.ts","app/robots.ts","app/sitemap.ts"])assert.ok(existsSync(resolve(root,path)),path+" missing");});
+test("se mantienen las experiencias y controles locales",()=>{const page=read("app/page.tsx");assert.match(page,/<Universe\s*\/>/);assert.match(page,/<AmilcarChat compact\s*\/>/);assert.match(page,/toggleTerminal/);assert.match(page,/setSecret/);assert.match(page,/<ProjectExplorer\s*\/>/);assert.match(page,/<UniverseMap\s*\/>/);});
+test("el chat no contiene integración de API externa de IA",()=>{const route=read("app/api/chat/route.ts");assert.match(route,/amilcar-ai\/native/);assert.doesNotMatch(route,/api\.openai\.com|openrouter\.ai|anthropic\.com/);});
+test("PWA y política de privacidad están presentes",()=>{assert.ok(existsSync(resolve(root,"public/sw.js")));assert.ok(existsSync(resolve(root,"public/offline.html")));assert.match(read("app/privacidad/page.tsx"),/localStorage/);});
