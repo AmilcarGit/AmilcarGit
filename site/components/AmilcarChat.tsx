@@ -1,100 +1,33 @@
 "use client";
-
-import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
-
-type ChatMessage = { role: "assistant" | "user"; content: string; model?: string; error?: boolean };
-type ChatResponse = { reply?: string; model?: string; engine?: string; usedNeural?: boolean; error?: string };
-
-const starters = ["¿Quién eres?", "¿Qué puedes hacer?", "Ayúdame con JavaScript"];
-
-export default function AmilcarChat({ compact = false }: { compact?: boolean }) {
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    { role: "assistant", content: "¡Hola! Soy AMILCAR AI. Estoy en fase experimental: puedo ayudarte con conocimientos locales, preguntas sencillas y programación. Pregúntame algo para probar el motor." }
-  ]);
-  const [input, setInput] = useState("");
-  const [pending, setPending] = useState(false);
-  const [status, setStatus] = useState("MOTOR PROPIO · APOYO LOCAL");
-  const transcriptRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    const transcript = transcriptRef.current;
-    if (transcript) transcript.scrollTo({ top: transcript.scrollHeight, behavior: "smooth" });
-  }, [messages, pending]);
-
-  const sendMessage = async (raw?: string) => {
-    const message = (raw ?? input).trim();
-    if (!message || pending || message.length > 2000) return;
-    const history = messages.filter((item) => item.role === "user").slice(-4).map((item) => ({ role: "user", content: item.content }));
-    setMessages((previous) => [...previous, { role: "user", content: message }]);
-    setInput("");
-    setPending(true);
-    setStatus("PROCESANDO EN LOCAL");
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message, history })
-      });
-      const data = await response.json() as ChatResponse;
-      if (!response.ok) throw new Error(data.error || "No pude responder ahora. Inténtalo de nuevo en unos segundos.");
-      const reply = typeof data.reply === "string" && data.reply.trim() ? data.reply.trim() : "El motor no devolvió una respuesta válida. Intenta reformular tu mensaje.";
-      setMessages((previous) => [...previous, { role: "assistant", content: reply, model: data.usedNeural ? "AMI-Base · apoyo neuronal local" : "AMILCAR-AI · motor propio" }]);
-      setStatus(data.usedNeural ? "APOYO NEURONAL ACTIVADO" : "MOTOR PROPIO · LISTO");
-    } catch (error) {
-      setMessages((previous) => [...previous, { role: "assistant", content: error instanceof Error ? error.message : "Error de conexión. Vuelve a intentarlo.", error: true }]);
-      setStatus("CONEXIÓN TEMPORALMENTE NO DISPONIBLE");
-    } finally {
-      setPending(false);
-      window.setTimeout(() => inputRef.current?.focus(), 0);
-    }
-  };
-
-  const submit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    void sendMessage();
-  };
-
-  const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === "Enter" && !event.shiftKey) {
-      event.preventDefault();
-      void sendMessage();
-    }
-  };
-
-  return (
-    <div className={compact ? "ai-chat-wrap ai-chat-compact" : "ai-chat-wrap"}>
-      <div className="ai-chat-head">
-        <div className="ai-chat-identity">
-          <div className="ai-chat-avatar" aria-hidden="true">✳</div>
-          <div><div className="ai-chat-name">AMILCAR AI <span aria-hidden="true">✦</span></div><div className="ai-chat-subtitle">MOTOR EXPERIMENTAL · SIN API EXTERNA</div></div>
-        </div>
-        <span className="ai-chat-live"><i /> {pending ? "PENSANDO" : "ONLINE"}</span>
-      </div>
-      <div className="ai-chat-transcript" ref={transcriptRef} role="log" aria-live="polite" aria-label="Conversación con AMILCAR AI">
-        {messages.map((message, index) => (
-          <div className={"ai-chat-message " + message.role} key={index}>
-            <span className="ai-chat-mini-avatar" aria-hidden="true">{message.role === "assistant" ? "✳" : "◉"}</span>
-            <div className="ai-chat-bubble">
-              {message.content}
-              {message.model && <span className="ai-chat-meta">{message.model}</span>}
-              {message.error && <span className="ai-chat-meta">No se guardó tu mensaje en una base de datos del chat.</span>}
-            </div>
-          </div>
-        ))}
-        {pending && <div className="ai-chat-message assistant"><span className="ai-chat-mini-avatar" aria-hidden="true">✳</span><div className="ai-chat-bubble"><span className="ai-chat-typing" aria-label="Generando respuesta"><i/><i/><i/></span><span className="ai-chat-meta">El motor está generando una respuesta…</span></div></div>}
-      </div>
-      <div className="ai-chat-composer">
-        <div className="ai-chat-suggestions" aria-label="Preguntas sugeridas">
-          {starters.map((starter) => <button type="button" key={starter} disabled={pending} onClick={() => void sendMessage(starter)}>{starter}</button>)}
-        </div>
-        <form className="ai-chat-input-row" onSubmit={submit}>
-          <textarea ref={inputRef} className="ai-chat-input" value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={handleKeyDown} placeholder="Escribe tu mensaje a AMILCAR AI…" aria-label="Mensaje para AMILCAR AI" rows={1} maxLength={2000} disabled={pending} />
-          <button className="ai-chat-send" type="submit" disabled={pending || !input.trim()} aria-label="Enviar mensaje">↑</button>
-        </form>
-        <div className="ai-chat-footnote"><span>ENTER PARA ENVIAR · SHIFT + ENTER PARA SALTO</span><strong>{input.length}/2000</strong></div>
-      </div>
-      <span className="ai-chat-status" aria-live="polite" style={{ position: "absolute", width: 1, height: 1, overflow: "hidden", clipPath: "inset(50%)" }}>{status}</span>
-    </div>
-  );
+import {useEffect,useMemo,useRef,useState,type FormEvent,type KeyboardEvent} from "react";
+type ChatMessage={role:"assistant"|"user";content:string;model?:string;error?:boolean};
+type Session={id:string;title:string;messages:ChatMessage[];updated:number};
+type Mode="general"|"code"|"explain"|"creative";
+type ChatResponse={reply?:string;model?:string;engine?:string;usedNeural?:boolean;error?:string};
+const STORAGE_KEY="amilcargit:chat-sessions-v1";
+const welcome:ChatMessage={role:"assistant",content:"¡Hola! Soy AMILCAR AI. Estoy en fase experimental: puedo ayudarte con conocimientos locales, preguntas sencillas y programación. Pregúntame algo para probar el motor."};
+const starters=["¿Quién eres?","¿Qué puedes hacer?","Ayúdame con JavaScript"];
+const modeLabels:Record<Mode,string>={general:"General",code:"Programación",explain:"Explicar paso a paso",creative:"Creativo"};
+function newId(){return `chat-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,7)}`;}
+export default function AmilcarChat({compact=false}:{compact?:boolean}){
+ const [messages,setMessages]=useState<ChatMessage[]>([welcome]);const [input,setInput]=useState("");const [pending,setPending]=useState(false);const [status,setStatus]=useState("MOTOR PROPIO · APOYO LOCAL");const [mode,setMode]=useState<Mode>("general");
+ const [sessions,setSessions]=useState<Session[]>([]);const [currentId,setCurrentId]=useState("");const [historyOpen,setHistoryOpen]=useState(false);const [historyQuery,setHistoryQuery]=useState("");const [hydrated,setHydrated]=useState(false);
+ const transcriptRef=useRef<HTMLDivElement>(null);const inputRef=useRef<HTMLTextAreaElement>(null);
+ useEffect(()=>{try{const parsed=JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]");const saved=Array.isArray(parsed)?parsed.filter((s):s is Session=>s&&typeof s.id==="string"&&Array.isArray(s.messages)):[];if(saved.length){setSessions(saved);const current=saved[0];setCurrentId(current.id);setMessages(current.messages.length?current.messages:[welcome]);}else{const id=newId();setCurrentId(id);setSessions([{id,title:"Nueva conversación",messages:[welcome],updated:Date.now()}]);}}catch{const id=newId();setCurrentId(id);setSessions([{id,title:"Nueva conversación",messages:[welcome],updated:Date.now()}]);}setHydrated(true);},[]);
+ useEffect(()=>{if(!hydrated||!currentId)return;setSessions(previous=>{const existing=previous.find(s=>s.id===currentId);const firstUser=messages.find(m=>m.role==="user")?.content;const updated:Session={id:currentId,title:firstUser?firstUser.slice(0,54):"Nueva conversación",messages,updated:Date.now()};const next=[updated,...previous.filter(s=>s.id!==currentId)].slice(0,25);try{localStorage.setItem(STORAGE_KEY,JSON.stringify(next));}catch{}return next;});},[messages,currentId,hydrated]);
+ useEffect(()=>{const el=transcriptRef.current;if(el)el.scrollTo({top:el.scrollHeight,behavior:"smooth"});},[messages,pending]);
+ const matchingSessions=useMemo(()=>sessions.filter(s=>!historyQuery.trim()||s.title.toLowerCase().includes(historyQuery.toLowerCase())||s.messages.some(m=>m.content.toLowerCase().includes(historyQuery.toLowerCase()))),[sessions,historyQuery]);
+ const sendMessage=async(raw?:string)=>{const message=(raw??input).trim();if(!message||pending||message.length>2000)return;const history=messages.filter(m=>m.role==="user").slice(-4).map(m=>({role:"user",content:m.content}));setMessages(prev=>[...prev,{role:"user",content:message}]);setInput("");setPending(true);setStatus("PROCESANDO EN LOCAL");try{const response=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({message,history,mode})});const data=await response.json() as ChatResponse;if(!response.ok)throw new Error(data.error||"No pude responder ahora. Inténtalo de nuevo.");const reply=typeof data.reply==="string"&&data.reply.trim()?data.reply.trim():"El motor no devolvió una respuesta válida. Intenta reformular tu mensaje.";setMessages(prev=>[...prev,{role:"assistant",content:reply,model:data.usedNeural?"AMI-Base · apoyo neuronal local":"AMILCAR-AI · motor propio"}]);setStatus(data.usedNeural?"APOYO NEURONAL ACTIVADO":"MOTOR PROPIO · LISTO");}catch(error){setMessages(prev=>[...prev,{role:"assistant",content:error instanceof Error?error.message:"Error de conexión. Vuelve a intentarlo.",error:true}]);setStatus("CONEXIÓN TEMPORALMENTE NO DISPONIBLE");}finally{setPending(false);window.setTimeout(()=>inputRef.current?.focus(),0);}};
+ const submit=(event:FormEvent<HTMLFormElement>)=>{event.preventDefault();void sendMessage();};
+ const handleKeyDown=(event:KeyboardEvent<HTMLTextAreaElement>)=>{if(event.key==="Enter"&&!event.shiftKey){event.preventDefault();void sendMessage();}};
+ const createSession=()=>{const id=newId();setCurrentId(id);setMessages([welcome]);setHistoryOpen(false);setHistoryQuery("");};
+ const openSession=(session:Session)=>{setCurrentId(session.id);setMessages(session.messages);setHistoryOpen(false);};
+ return <div className={compact?"ai-chat-wrap ai-chat-compact":"ai-chat-wrap"}>
+  <div className="ai-chat-head"><div className="ai-chat-identity"><div className="ai-chat-avatar" aria-hidden="true">✳</div><div><div className="ai-chat-name">AMILCAR AI <span aria-hidden="true">✦</span></div><div className="ai-chat-subtitle">MOTOR EXPERIMENTAL · SIN API EXTERNA</div></div></div><div className="chat-head-actions"><span className="ai-chat-live"><i/>{pending?"PENSANDO":"ONLINE"}</span><button type="button" className="chat-tool-button" onClick={()=>setHistoryOpen(v=>!v)} aria-expanded={historyOpen}>Historial</button><button type="button" className="chat-tool-button" onClick={createSession}>＋ Nuevo</button></div></div>
+  {historyOpen&&<aside className="chat-history-panel"><div className="chat-history-heading"><strong>Conversaciones en este dispositivo</strong><button onClick={()=>setHistoryOpen(false)} aria-label="Cerrar historial">×</button></div><input value={historyQuery} onChange={e=>setHistoryQuery(e.target.value)} placeholder="Buscar en el historial…" aria-label="Buscar conversaciones"/><div className="chat-history-list">{matchingSessions.map(s=><button key={s.id} className={s.id===currentId?"selected":""} onClick={()=>openSession(s)}><strong>{s.title}</strong><small>{new Date(s.updated).toLocaleString("es-PE",{dateStyle:"short",timeStyle:"short"})} · {s.messages.length} mensajes</small></button>)}{!matchingSessions.length&&<p>No hay coincidencias.</p>}</div><small>El historial permanece en este navegador. No se sincroniza con otros dispositivos.</small></aside>}
+  <div className="chat-mode-row"><label htmlFor="chat-mode">Enfoque de respuesta</label><select id="chat-mode" value={mode} onChange={e=>setMode(e.target.value as Mode)}>{Object.entries(modeLabels).map(([key,label])=><option key={key} value={key}>{label}</option>)}</select><span>Guardado local activado</span></div>
+  <div className="ai-chat-transcript" ref={transcriptRef} role="log" aria-live="polite" aria-label="Conversación con AMILCAR AI">{messages.map((message,index)=><div className={"ai-chat-message "+message.role} key={index}><span className="ai-chat-mini-avatar" aria-hidden="true">{message.role==="assistant"?"✳":"◉"}</span><div className="ai-chat-bubble">{message.content}{message.model&&<span className="ai-chat-meta">{message.model}</span>}{message.error&&<span className="ai-chat-meta">Comprueba tu conexión e inténtalo de nuevo.</span>}</div></div>)}{pending&&<div className="ai-chat-message assistant"><span className="ai-chat-mini-avatar" aria-hidden="true">✳</span><div className="ai-chat-bubble"><span className="ai-chat-typing" aria-label="Generando respuesta"><i/><i/><i/></span><span className="ai-chat-meta">El motor está generando una respuesta…</span></div></div>}</div>
+  <div className="ai-chat-composer"><div className="ai-chat-suggestions" aria-label="Preguntas sugeridas">{starters.map(starter=><button type="button" key={starter} disabled={pending} onClick={()=>void sendMessage(starter)}>{starter}</button>)}</div><form className="ai-chat-input-row" onSubmit={submit}><textarea ref={inputRef} className="ai-chat-input" value={input} onChange={e=>setInput(e.target.value)} onKeyDown={handleKeyDown} placeholder="Escribe tu mensaje a AMILCAR AI…" aria-label="Mensaje para AMILCAR AI" rows={1} maxLength={2000} disabled={pending}/><button className="ai-chat-send" type="submit" disabled={pending||!input.trim()} aria-label="Enviar mensaje">↑</button></form><div className="ai-chat-footnote"><span>ENTER PARA ENVIAR · SHIFT + ENTER PARA SALTO</span><strong>{input.length}/2000</strong></div></div>
+  <span className="ai-chat-status" aria-live="polite" style={{position:"absolute",width:1,height:1,overflow:"hidden",clipPath:"inset(50%)"}}>{status}</span>
+ </div>;
 }
