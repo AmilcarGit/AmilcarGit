@@ -129,7 +129,7 @@ export default function Home() {
         <a className="brand" href="#inicio" aria-label="AMILCARGIT, inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen}><span/><span/><span/></button>
         <nav className={menuOpen ? "navigation nav-open" : "navigation"} aria-label="Navegación principal">
-          <a href="#universo" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#laboratorio" onClick={() => setMenuOpen(false)}>Laboratorio</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a><a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a><LocaleToggle /><ThemeToggle />
+          <a href="#universo" data-en="Universe" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" data-en="Projects" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#laboratorio" data-en="Lab" onClick={() => setMenuOpen(false)}>Laboratorio</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#sobre-mi" data-en="About" onClick={() => setMenuOpen(false)}>Sobre mí</a><a href="#contacto" data-en="Contact" onClick={() => setMenuOpen(false)}>Contacto</a><LocaleToggle /><ThemeToggle />
           <button className="sound-button" onClick={playTone} aria-pressed={soundOn}><span className={soundOn ? "sound-bars playing" : "sound-bars"}><i/><i/><i/><i/></span>{soundOn ? "SONIDO ON" : "SONIDO OFF"}</button>
         </nav>
       </header>
@@ -139,8 +139,8 @@ export default function Home() {
         <div className="hero-copy">
           <div className="status-pill"><span className="status-dot"/> DESARROLLADOR INDEPENDIENTE <span className="pill-separator"/> PERÚ</div>
           <p className="eyebrow"><span>✳</span> CREADOR DIGITAL INDEPENDIENTE</p>
-          <h1>El futuro no se<br/>espera. <span>Se construye.</span></h1>
-          <p className="hero-description">Diseño y desarrollo bots, herramientas digitales y experiencias web. También experimento con motores de inteligencia artificial propios y proyectos de código abierto.</p>
+          <h1 data-en="Build what comes next.">El futuro no se<br/>espera. <span>Se construye.</span></h1>
+          <p className="hero-description" data-en="I build bots, digital tools and web experiences. I also experiment with independent AI engines and open-source projects.">Diseño y desarrollo bots, herramientas digitales y experiencias web. También experimento con motores de inteligencia artificial propios y proyectos de código abierto.</p>
           <div className="hero-actions"><a className="button button-primary" href="#proyectos">Explorar proyectos <span>↗</span></a><a className="button button-ghost" href="/chat">Hablar con AMILCAR AI <span>✳</span></a><a className="button button-ghost" href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer"><span className="github-glyph">⌘</span> Abrir GitHub</a></div>
           <div className="hero-proof"><div className="proof-avatars"><span>JS</span><span>AI</span><span>⌘</span></div><p><strong>Aprender construyendo.</strong><br/>Proyectos reales, mejoras constantes.</p></div>
         </div>
@@ -158,7 +158,7 @@ export default function Home() {
       <section className="ticker" aria-label="Áreas de trabajo"><div className="ticker-track">{Array.from({length:2}).map((_, index) => <span key={index}>OPEN SOURCE <b>✳</b> ARTIFICIAL INTELLIGENCE <b>✳</b> WEB EXPERIENCES <b>✳</b> BOT SYSTEMS <b>✳</b> ANDROID TOOLS <b>✳</b> CREATIVE CODE <b>✳</b></span>)}</div></section>
 
       <section className="section projects-section" id="proyectos">
-        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01 /</span> EL MAPA ESTELAR</p><h2>Ideas convertidas<br/><span>en proyectos reales.</span></h2></div><p className="section-intro">Una selección de proyectos propios: herramientas, automatización e inteligencia artificial experimental. Entra, revisa el código y descubre qué puedes construir.</p></div>
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01 /</span> EL MAPA ESTELAR</p><h2 data-en="Ideas turned into real projects.">Ideas convertidas<br/><span>en proyectos reales.</span></h2></div><p className="section-intro">Una selección de proyectos propios: herramientas, automatización e inteligencia artificial experimental. Entra, revisa el código y descubre qué puedes construir.</p></div>
         <ProjectExplorer />
         <div className="all-projects" data-reveal><span>¿Quieres ver todo el mapa?</span><a href="https://github.com/AmilcarGit?tab=repositories" target="_blank" rel="noreferrer">Todos los repositorios <span>↗</span></a></div>
       </section>
@@ -168,7 +168,7 @@ export default function Home() {
         <ProjectGallery />
       </section>
       <section className="section stats-section" id="estadisticas">
-        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01.5 /</span> ACTIVIDAD DEL UNIVERSO</p><h2>Un vistazo al <span>ecosistema.</span></h2></div><p className="section-intro">Datos del catálogo y de este navegador. No consultamos una API externa ni enviamos estadísticas a terceros.</p></div>
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01.5 /</span> ACTIVIDAD DEL UNIVERSO</p><h2 data-en="A look at the ecosystem.">Un vistazo al <span>ecosistema.</span></h2></div><p className="section-intro">Datos del catálogo y de este navegador. No consultamos una API externa ni enviamos estadísticas a terceros.</p></div>
         <LocalInsights />
       </section>
 
@@ -185,13 +185,13 @@ export default function Home() {
       </section>
 
       <section className="section trajectory-section" id="trayectoria">
-        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>02.5 /</span> MI RECORRIDO</p><h2>Aprender haciendo.<br/><span>Construir compartiendo.</span></h2></div><p className="section-intro">Un camino práctico: curiosidad, prototipos, pruebas y proyectos públicos.</p></div>
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>02.5 /</span> MI RECORRIDO</p><h2 data-en="Learn by building. Share to grow.">Aprender haciendo.<br/><span>Construir compartiendo.</span></h2></div><p className="section-intro">Un camino práctico: curiosidad, prototipos, pruebas y proyectos públicos.</p></div>
         <div className="journey-cards"><article><span>01 / EXPLORAR</span><h3>Curiosidad</h3><p>Investigar tecnologías y detectar ideas que merecen convertirse en proyectos.</p></article><article><span>02 / CONSTRUIR</span><h3>Experimentación</h3><p>Crear, probar y aprender desde el código, incluso desde Android y Termux.</p></article><article><span>03 / COMPARTIR</span><h3>Código abierto</h3><p>Documentar avances y abrir repositorios para que otras personas puedan explorar.</p></article></div>
         <a className="text-link" href="/trayectoria">Leer mi trayectoria completa ↗</a>
       </section>
 
       <section className="section ai-home-section" id="amilcar-ai">
-        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>AI /</span> CONVERSACIÓN EXPERIMENTAL</p><h2>Habla con <span>AMILCAR AI.</span></h2></div><p className="section-intro">Un proyecto en desarrollo que explora generación de respuestas con un motor propio y apoyo neuronal local. No utiliza una API externa de IA; sus respuestas siguen siendo experimentales y pueden equivocarse.</p></div>
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>AI /</span> CONVERSACIÓN EXPERIMENTAL</p><h2 data-en="Talk to AMILCAR AI.">Habla con <span>AMILCAR AI.</span></h2></div><p className="section-intro">Un proyecto en desarrollo que explora generación de respuestas con un motor propio y apoyo neuronal local. No utiliza una API externa de IA; sus respuestas siguen siendo experimentales y pueden equivocarse.</p></div>
         <AmilcarChat compact />
         <div className="ai-open-link" data-reveal><span>✧ CONVERSACIÓN COMPLETA</span><a href="/chat">Abrir la página independiente del chat <span>↗</span></a></div>
       </section>
@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       <section className="section lab-section" id="laboratorio">
-        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>04 /</span> LABORATORIO EXPERIMENTAL</p><h2>Un universo de <span>prototipos.</span></h2></div><p className="section-intro">Explora los nodos de proyectos y los experimentos que todavía están evolucionando.</p></div>
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>04 /</span> LABORATORIO EXPERIMENTAL</p><h2 data-en="A universe of prototypes.">Un universo de <span>prototipos.</span></h2></div><p className="section-intro">Explora los nodos de proyectos y los experimentos que todavía están evolucionando.</p></div>
         <UniverseMap />
         <div className="lab-links"><a href="/laboratorio">Ver laboratorio completo ↗</a><a href="/novedades">Novedades y versiones ↗</a><a href="/preguntas">Preguntas frecuentes ↗</a></div>
       </section>
@@ -221,7 +221,7 @@ export default function Home() {
         <div className={terminalOpen ? "terminal-window terminal-expanded" : "terminal-window"} data-reveal><div className="terminal-titlebar"><div className="window-dots"><i/><i/><i/></div><span>amilcar@universe:~</span><span className="terminal-lock">◈ SAFE MODE</span></div><div className="terminal-content" aria-live="polite">{terminalLines.map((line,index)=><p className={line.startsWith("visitor@") ? "command-line" : "response-line"} key={`${index}-${line}`}>{line}</p>)}<form className="terminal-form" onSubmit={(event)=>{event.preventDefault();runCommand();}}><label htmlFor="terminal-input">visitor@amilcar:~$</label><input id="terminal-input" ref={terminalInputRef} autoComplete="off" spellCheck={false} value={terminalInput} onChange={(event)=>setTerminalInput(event.target.value)} placeholder="escribe help..." /><button type="submit" aria-label="Ejecutar comando">↵</button></form></div><div className="terminal-bottom"><span><i/> DEMO LOCAL · SIN ACCESO AL SISTEMA</span><span>INTERACTIVE SHELL v1.0</span></div></div>
       </section>
 
-      <section className="contact-section" id="contacto" data-reveal><div className="contact-grid"><div><p className="eyebrow"><span>06 /</span> HABLEMOS</p><h2>¿Tienes una idea?<br/><span>Hagámosla realidad.</span></h2><p className="contact-note">Cuéntame qué te gustaría construir o en qué proyecto te gustaría colaborar.</p><div className="social-links"><a href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.tiktok.com/@amilkargit1" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://whatsapp.com/channel/0029VbELVHt47XeHAIlbHu03" target="_blank" rel="noreferrer">Canal WhatsApp ↗</a></div></div><div className="contact-right"><ServiceContact /></div></div></section>
+      <section className="contact-section" id="contacto" data-reveal><div className="contact-grid"><div><p className="eyebrow"><span>06 /</span> HABLEMOS</p><h2 data-en="Have an idea? Let’s build it.">¿Tienes una idea?<br/><span>Hagámosla realidad.</span></h2><p className="contact-note">Cuéntame qué te gustaría construir o en qué proyecto te gustaría colaborar.</p><div className="social-links"><a href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.tiktok.com/@amilkargit1" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://whatsapp.com/channel/0029VbELVHt47XeHAIlbHu03" target="_blank" rel="noreferrer">Canal WhatsApp ↗</a></div></div><div className="contact-right"><ServiceContact /></div></div></section>
 
       <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><div className="footer-links"><a href="/cv">Perfil / CV</a><a href="/privacidad">Privacidad</a><a href="/condiciones">Condiciones</a><a href="/preguntas">FAQ</a><a href="/novedades">Novedades</a></div><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
 
