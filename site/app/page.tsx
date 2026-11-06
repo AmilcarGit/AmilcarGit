@@ -8,6 +8,8 @@ import LocalInsights from "@/components/LocalInsights";
 import UniverseMap from "@/components/UniverseMap";
 import ServiceContact from "@/components/ServiceContact";
 import LocaleToggle from "@/components/LocaleToggle";
+import ThemeToggle from "@/components/ThemeToggle";
+import ProjectGallery from "@/components/ProjectGallery";
 
 const commands: Record<string, string> = {
   help: "Comandos disponibles: help, about, projects, ai, tools, socials, clear",
@@ -127,7 +129,7 @@ export default function Home() {
         <a className="brand" href="#inicio" aria-label="AMILCARGIT, inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen}><span/><span/><span/></button>
         <nav className={menuOpen ? "navigation nav-open" : "navigation"} aria-label="Navegación principal">
-          <a href="#universo" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#laboratorio" onClick={() => setMenuOpen(false)}>Laboratorio</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a><a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a><LocaleToggle />
+          <a href="#universo" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#laboratorio" onClick={() => setMenuOpen(false)}>Laboratorio</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#sobre-mi" onClick={() => setMenuOpen(false)}>Sobre mí</a><a href="#contacto" onClick={() => setMenuOpen(false)}>Contacto</a><LocaleToggle /><ThemeToggle />
           <button className="sound-button" onClick={playTone} aria-pressed={soundOn}><span className={soundOn ? "sound-bars playing" : "sound-bars"}><i/><i/><i/><i/></span>{soundOn ? "SONIDO ON" : "SONIDO OFF"}</button>
         </nav>
       </header>
@@ -161,6 +163,10 @@ export default function Home() {
         <div className="all-projects" data-reveal><span>¿Quieres ver todo el mapa?</span><a href="https://github.com/AmilcarGit?tab=repositories" target="_blank" rel="noreferrer">Todos los repositorios <span>↗</span></a></div>
       </section>
 
+      <section className="section gallery-section" id="galeria">
+        <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01.2 /</span> GALERÍA DEL ECOSISTEMA</p><h2>Una mirada a <span>lo que construyo.</span></h2></div><p className="section-intro">Vistas gráficas de identidad y concepto. Las capturas reales de cada aplicación se irán incorporando cuando estén disponibles.</p></div>
+        <ProjectGallery />
+      </section>
       <section className="section stats-section" id="estadisticas">
         <div className="section-heading" data-reveal><div><p className="eyebrow"><span>01.5 /</span> ACTIVIDAD DEL UNIVERSO</p><h2>Un vistazo al <span>ecosistema.</span></h2></div><p className="section-intro">Datos del catálogo y de este navegador. No consultamos una API externa ni enviamos estadísticas a terceros.</p></div>
         <LocalInsights />
