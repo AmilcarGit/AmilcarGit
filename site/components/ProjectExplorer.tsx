@@ -1,0 +1,16 @@
+"use client";
+import {useMemo,useState,useEffect} from "react";
+import Link from "next/link";
+import {projects,categories,statusLabels} from "@/data/projects";
+export default function ProjectExplorer(){
+ const [query,setQuery]=useState(""); const [category,setCategory]=useState("Todos"); const [favorites,setFavorites]=useState<string[]>([]); const [onlyFavorites,setOnlyFavorites]=useState(false);
+ useEffect(()=>{try{const saved=JSON.parse(localStorage.getItem("amilcargit:favorites")||"[]");if(Array.isArray(saved))setFavorites(saved.filter(x=>projects.some(p=>p.slug===x)));}catch{}},[]);
+ const toggleFavorite=(slug:string)=>setFavorites(old=>{const next=old.includes(slug)?old.filter(x=>x!==slug):[...old,slug];try{localStorage.setItem("amilcargit:favorites",JSON.stringify(next));}catch{}return next;});
+ const visible=useMemo(()=>projects.filter(p=>(category==="Todos"||p.category===category)&&(!onlyFavorites||favorites.includes(p.slug))&&[p.name,p.description,p.category,...p.tags].join(" ").toLowerCase().includes(query.toLowerCase())),[category,onlyFavorites,favorites,query]);
+ return <div className="project-explorer">
+  <div className="project-tools"><label className="project-search"><span aria-hidden="true">⌕</span><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Buscar proyectos, tecnologías…" aria-label="Buscar proyectos"/></label><button className={onlyFavorites?"filter-favorites active":"filter-favorites"} onClick={()=>setOnlyFavorites(v=>!v)} aria-pressed={onlyFavorites}>♡ Favoritos ({favorites.length})</button></div>
+  <div className="project-filters" aria-label="Filtrar por categoría">{categories.map(item=><button key={item} className={category===item?"active":""} onClick={()=>setCategory(item)} aria-pressed={category===item}>{item}</button>)}</div>
+  <p className="project-results" aria-live="polite">{visible.length} de {projects.length} proyectos · Catálogo local</p>
+  {visible.length? <div className="project-grid">{visible.map(project=><article className={`project-card tone-${project.tone} enhanced-project-card`} key={project.slug} data-reveal><div className="card-top"><span className="project-number">{project.number} / NODE</span><span className={`project-status status-${project.status}`}>{statusLabels[project.status]}</span></div><div className="project-icon">{project.name==="AMILCAR-AI"?"✳":project.name==="AmilcarTools"?"⌘":project.name==="YuiBot-MD"?"✿":"◈"}</div><p className="project-type">{project.category}</p><h3>{project.name}</h3><p className="project-description">{project.description}</p><div className="tag-list">{project.tags.map(tag=><span key={tag}>{tag}</span>)}</div><div className="project-actions"><Link href={`/proyectos/${project.slug}`}>Detalles <span>↗</span></Link><a href={project.repo} target="_blank" rel="noreferrer">Código ↗</a><button onClick={()=>toggleFavorite(project.slug)} aria-label={favorites.includes(project.slug)?"Quitar de favoritos":"Añadir a favoritos"} aria-pressed={favorites.includes(project.slug)}>{favorites.includes(project.slug)?"♥":"♡"}</button></div></article>)}</div>:<div className="project-empty"><strong>No encontramos proyectos.</strong><p>Prueba con otra búsqueda o categoría.</p><button onClick={()=>{setQuery("");setCategory("Todos");setOnlyFavorites(false)}}>Limpiar filtros</button></div>}
+ </div>;
+}
