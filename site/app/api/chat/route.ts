@@ -102,7 +102,7 @@ export async function POST(request: Request) {
     explain: "Explica paso a paso con lenguaje sencillo. Pregunta del usuario: ",
     creative: "Responde con enfoque creativo y propone ideas originales. Pregunta del usuario: "
   };
-  const engineMessage = selectedMode === "general" ? message : modeInstruction[selectedMode] + message;
+  const engineMessage = (selectedMode === "general" ? message : modeInstruction[selectedMode] + message).slice(0, 2000);
 
   try {
     const native = new NativeAmilcarAI({ maxHistory: 6, maxMessageLength: 2000 });
