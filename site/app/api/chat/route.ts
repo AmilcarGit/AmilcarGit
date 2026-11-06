@@ -77,7 +77,7 @@ export async function POST(request: Request) {
   }
 
   if (!payload || typeof payload !== "object" || Array.isArray(payload)) return jsonError("El cuerpo de la solicitud no es válido.", 400);
-  const body = payload as { message?: unknown; history?: unknown };
+  const body = payload as { message?: unknown; history?: unknown; mode?: unknown };
   if (typeof body.message !== "string" || !body.message.trim()) return jsonError("Escribe un mensaje antes de enviarlo.", 400);
   const message = body.message.trim();
   if (message.length > 2000) return jsonError("El mensaje supera el límite de 2000 caracteres.", 413);
@@ -95,13 +95,22 @@ export async function POST(request: Request) {
     }
   }
 
+  const selectedMode = ["general", "code", "explain", "creative"].includes(String(body.mode)) ? String(body.mode) : "general";
+  const modeInstruction: Record<string, string> = {
+    general: "",
+    code: "Responde con enfoque de programación y ejemplos de código cuando sean útiles. Pregunta del usuario: ",
+    explain: "Explica paso a paso con lenguaje sencillo. Pregunta del usuario: ",
+    creative: "Responde con enfoque creativo y propone ideas originales. Pregunta del usuario: "
+  };
+  const engineMessage = selectedMode === "general" ? message : modeInstruction[selectedMode] + message;
+
   try {
     const native = new NativeAmilcarAI({ maxHistory: 6, maxMessageLength: 2000 });
     for (const previousMessage of history) await native.chat(previousMessage);
-    const result = await native.chat(message);
+    const result = await native.chat(engineMessage);
     if (result.intent === "unknown" && neural.isAvailable()) {
       try {
-        const generated = await neural.chat(message);
+        const generated = await neural.chat(engineMessage);
         if (isPlausibleAnswer(message, generated.reply)) {
           return NextResponse.json({
             reply: generated.reply.trim(),
