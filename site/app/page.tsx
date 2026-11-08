@@ -10,6 +10,7 @@ import ServiceContact from "@/components/ServiceContact";
 import LocaleToggle from "@/components/LocaleToggle";
 import ThemeToggle from "@/components/ThemeToggle";
 import ProjectGallery from "@/components/ProjectGallery";
+import BrandMark from "@/components/BrandMark";
 
 const commands: Record<string, string> = {
   help: "Comandos: help, about, projects, ai, tools, socials, skills, version, status, contact, open projects, clear",
@@ -131,7 +132,7 @@ export default function Home() {
       <div className="ambient ambient-one" aria-hidden="true" />
       <div className="ambient ambient-two" aria-hidden="true" />
       <header className="topbar">
-        <a className="brand" href="#inicio" aria-label="AMILCARGIT, inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a>
+        <a className="brand" href="#inicio" aria-label="AMILCARGIT, inicio"><span className="brand-mark"><BrandMark className="brand-mark-icon" /></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"} aria-expanded={menuOpen}><span/><span/><span/></button>
         <nav className={menuOpen ? "navigation nav-open" : "navigation"} aria-label="Navegación principal">
           <a href="#universo" data-en="Universe" onClick={() => setMenuOpen(false)}>Universo</a><a href="#proyectos" data-en="Projects" onClick={() => setMenuOpen(false)}>Proyectos</a><a href="#laboratorio" data-en="Lab" onClick={() => setMenuOpen(false)}>Laboratorio</a><a href="#amilcar-ai" onClick={() => setMenuOpen(false)}>AMILCAR AI</a><a href="#sobre-mi" data-en="About" onClick={() => setMenuOpen(false)}>Sobre mí</a><a href="#contacto" data-en="Contact" onClick={() => setMenuOpen(false)}>Contacto</a><LocaleToggle /><ThemeToggle />
@@ -151,13 +152,31 @@ export default function Home() {
         </div>
         <div className="hero-visual" id="universo">
           <div className="visual-label label-top"><span className="label-pulse"/> PLANETA // 001 <span>LIVE RENDER</span></div>
-          <Universe />
+          <Universe /><div className="planet-signature" aria-label="Emblema de AMILCARGIT"><BrandMark className="planet-signature-mark" /><span>AMILCARGIT</span><small>CREATOR CORE · 001</small></div>
           <div className="orbit-tag tag-left"><span>◉</span><div>CORE ENGINE<small>THREE.JS / REALTIME</small></div></div>
           <div className="orbit-tag tag-right"><span>⌁</span><div>CREATIVE MODE<small>ALWAYS EXPLORING</small></div></div>
           <div className="visual-coordinates">-12.0464° S<br/>-77.0428° W <span>PERÚ · EARTH</span></div>
           <div className="visual-label label-bottom"><span>ARRASTRA PARA EXPLORAR</span><span>✧</span><span>INTERACTIVE 3D</span></div>
         </div>
         <a className="scroll-cue" href="#proyectos"><span className="scroll-line"/> DESLIZA PARA EXPLORAR <span>↓</span></a>
+      </section>
+
+      <section className="signature-section" aria-labelledby="signature-title">
+        <div className="signature-heading" data-reveal>
+          <p className="eyebrow"><span>AMILCARGIT /</span> IDENTIDAD EN ÓRBITA</p>
+          <h2 id="signature-title">Un creador. <span>Un universo.</span></h2>
+          <p>Una misma identidad conecta cada experimento: ideas que se convierten en código, herramientas y proyectos abiertos.</p>
+        </div>
+        <div className="signature-system" data-reveal>
+          <div className="signature-orbit signature-orbit-one" aria-hidden="true" />
+          <div className="signature-orbit signature-orbit-two" aria-hidden="true" />
+          <div className="signature-center"><BrandMark className="signature-center-mark" /><strong>AMILCARGIT</strong><small>CREATOR NODE</small></div>
+          <a className="signature-node signature-node-ai" href="#amilcar-ai"><span>✳</span><strong>AMILCAR-AI</strong><small>INTELIGENCIA EXPERIMENTAL</small></a>
+          <a className="signature-node signature-node-tools" href="https://amilcartools.vercel.app/" target="_blank" rel="noreferrer"><span>⌘</span><strong>AMILCARTOOLS</strong><small>HERRAMIENTAS DIGITALES</small></a>
+          <a className="signature-node signature-node-bots" href="#proyectos"><span>◈</span><strong>BOT SYSTEMS</strong><small>AUTOMATIZACIÓN</small></a>
+          <a className="signature-node signature-node-web" href="#laboratorio"><span>◎</span><strong>WEB EXPERIENCES</strong><small>EXPERIMENTOS Y WEB</small></a>
+        </div>
+        <p className="signature-motto">“No espero al futuro. Lo construyo, experimento y comparto.”</p>
       </section>
 
       <section className="ticker" aria-label="Áreas de trabajo"><div className="ticker-track">{Array.from({length:2}).map((_, index) => <span key={index}>OPEN SOURCE <b>✳</b> ARTIFICIAL INTELLIGENCE <b>✳</b> WEB EXPERIENCES <b>✳</b> BOT SYSTEMS <b>✳</b> ANDROID TOOLS <b>✳</b> CREATIVE CODE <b>✳</b></span>)}</div></section>
@@ -202,7 +221,7 @@ export default function Home() {
       </section>
 
       <section className="section about-section" id="sobre-mi">
-        <div className="about-orb" data-reveal><div className="orb-ring orb-ring-one"/><div className="orb-ring orb-ring-two"/><div className="orb-core">A<span>✦</span></div><span className="orb-caption">CREATOR NODE</span></div>
+        <div className="about-orb" data-reveal><div className="orb-ring orb-ring-one"/><div className="orb-ring orb-ring-two"/><div className="orb-core"><BrandMark className="orb-brand-mark" /></div><span className="orb-caption">CREATOR NODE</span></div>
         <div className="about-copy" data-reveal><p className="eyebrow"><span>03 /</span> DETRÁS DEL CÓDIGO</p><h2>Hola, soy<br/><span>AmilcarGit.</span></h2><p>Soy desarrollador independiente y creador de proyectos digitales. Me interesa construir herramientas útiles, automatizar tareas y explorar nuevas formas de crear software.</p><p>Aprendo haciendo: pruebo ideas, reviso lo que no funciona y mejoro cada proyecto paso a paso. Este sitio reúne ese proceso y deja el código al alcance de quien quiera explorarlo.</p><div className="skill-cloud"><span>JavaScript</span><span>Node.js</span><span>Next.js</span><span>IA experimental</span><span>Termux</span><span>Open source</span></div><a className="text-link" href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">Conoce mi GitHub <span>↗</span></a></div>
       </section>
 
@@ -228,7 +247,7 @@ export default function Home() {
 
       <section className="contact-section" id="contacto" data-reveal><div className="contact-grid"><div><p className="eyebrow"><span>06 /</span> HABLEMOS</p><h2 data-en="Have an idea? Let’s build it.">¿Tienes una idea?<br/><span>Hagámosla realidad.</span></h2><p className="contact-note">Cuéntame qué te gustaría construir o en qué proyecto te gustaría colaborar.</p><div className="social-links"><a href="https://github.com/AmilcarGit" target="_blank" rel="noreferrer">GitHub ↗</a><a href="https://www.tiktok.com/@amilkargit1" target="_blank" rel="noreferrer">TikTok ↗</a><a href="https://whatsapp.com/channel/0029VbELVHt47XeHAIlbHu03" target="_blank" rel="noreferrer">Canal WhatsApp ↗</a></div></div><div className="contact-right"><ServiceContact /></div></div></section>
 
-      <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark">A<span>✦</span></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><div className="footer-links"><a href="/cv">Perfil / CV</a><a href="/privacidad">Privacidad</a><a href="/condiciones">Condiciones</a><a href="/preguntas">FAQ</a><a href="/novedades">Novedades</a><a href="/agradecimientos">Agradecimientos</a></div><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
+      <footer className="footer"><a className="brand footer-brand" href="#inicio"><span className="brand-mark"><BrandMark className="brand-mark-icon" /></span><span>AMILCAR<span className="brand-muted">GIT</span><small>DIGITAL UNIVERSE</small></span></a><p>HECHO CON CURIOSIDAD EN LA TIERRA · PERÚ <span>✳</span> © {new Date().getFullYear()} AMILCARGIT</p><div className="footer-links"><a href="/cv">Perfil / CV</a><a href="/privacidad">Privacidad</a><a href="/condiciones">Condiciones</a><a href="/preguntas">FAQ</a><a href="/novedades">Novedades</a><a href="/agradecimientos">Agradecimientos</a></div><a href="#inicio" className="back-top">VOLVER ARRIBA ↑</a></footer>
 
       <button className="floating-terminal" onClick={toggleTerminal} aria-label={terminalOpen ? "Cerrar terminal interactiva" : "Abrir terminal interactiva"} aria-expanded={terminalOpen}><span>⌘</span><small>TERMINAL</small></button>
       {secret && <div className="secret-overlay" role="dialog" aria-modal="true" aria-label="Mensaje secreto"><div className="secret-card"><button className="secret-close" onClick={()=>setSecret(false)} aria-label="Cerrar">×</button><span className="secret-star">✦</span><p className="eyebrow">EASTER EGG DESCUBIERTO</p><h2>Bienvenido al<br/><span>lado oculto.</span></h2><p>Las mejores ideas empiezan con curiosidad. Sigue explorando, sigue creando.</p><button className="button button-primary" onClick={()=>setSecret(false)}>Continuar explorando ↗</button></div></div>}
